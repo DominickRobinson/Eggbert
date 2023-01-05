@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Characters/Eggbert(flap).tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Misc/GameCamera(flappy).tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Props/Pipes/Pipe-Red.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Backgrounds/Background(flappy).tscn" type="PackedScene" id=5]
+
+[node name="Flappy" type="Node2D"]
+
+[node name="GUI" parent="." instance=ExtResource( 2 )]
+
+[node name="GameCamera(flappy)" parent="." instance=ExtResource( 3 )]
+player_node_path = NodePath("../Eggbert(flap)")
+
+[node name="Background(flappy)" parent="." instance=ExtResource( 5 )]
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2( 66, 25 )
+
+[node name="Pipe" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 600, -27 )
+
+[node name="Pipe2" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 1000, -109 )
+
+[node name="Pipe3" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 1400, 13 )
+
+[node name="Pipe4" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 1800, -80 )
+
+[node name="Eggbert(flap)" parent="." instance=ExtResource( 1 )]
