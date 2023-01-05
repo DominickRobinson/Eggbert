@@ -14,7 +14,7 @@ extents = Vector2( 45, 364 )
 [node name="GameCamera(flappy)" type="Camera2D"]
 current = true
 script = ExtResource( 1 )
-wall_spawn_range = [ 180, -80 ]
+wall_spawn_range = [ -180, 80 ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 z_index = 1

@@ -61,5 +61,5 @@ func _on_JumpPad_gui_input(event):
 
 func _on_point():
 	motion.x *= 1.02
-	GRAVITY *= 1.02
+	GRAVITY *= 1.02 * 1.02
 	FLAP *= 1.02

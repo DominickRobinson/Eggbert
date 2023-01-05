@@ -31,3 +31,4 @@ position = Vector2( 1400, 13 )
 position = Vector2( 1800, -80 )
 
 [node name="Eggbert(flap)" parent="." instance=ExtResource( 1 )]
+HORIZONTAL_SPEED = 80

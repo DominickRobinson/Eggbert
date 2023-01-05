@@ -27,18 +27,19 @@ __meta__ = {
 
 [node name="Pause" type="Button" parent="Buttons/Bar"]
 pause_mode = 2
-margin_left = 43.0
-margin_right = 93.0
+margin_left = 87.0
+margin_right = 137.0
 margin_bottom = 57.0
 text = "Pause"
 
 [node name="Restart" type="Button" parent="Buttons/Bar"]
-margin_left = 97.0
-margin_right = 154.0
+margin_left = 141.0
+margin_right = 198.0
 margin_bottom = 57.0
 text = "Restart"
 
 [node name="Quit" type="Button" parent="Buttons/Bar"]
+visible = false
 margin_left = 158.0
 margin_right = 198.0
 margin_bottom = 57.0
