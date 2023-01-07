@@ -10,4 +10,6 @@ func _on_Sensor_area_entered(area):
 
 func _on_Sensor_body_entered(body):
 	print("point!!!")
-	GameManager.increment_score()
+	if body.is_in_group("Players"):
+		if body.alive:
+			GameManager.increment_score()

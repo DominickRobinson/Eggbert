@@ -22,7 +22,7 @@ func _physics_process(delta):
 
 
 func _on_Reset_body_entered(body):
-	if body.is_in_group("Walls"):
+	if body.is_in_group("Obstacles"):
 		var walls = body.get_parent()
 		
 		var instance = wallResource.instance()

@@ -28,7 +28,7 @@ func _on_Restart_pressed():
 
 func _on_MainMenu_pressed():
 	self.is_paused = false
-	get_tree().change_scene("res://Scenes/Levels/MainMenu.tscn")
+	GameManager.main_menu()
 
 func _on_Quit_pressed():
 	GameManager.quit()

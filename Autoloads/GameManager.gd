@@ -11,7 +11,7 @@ var display_resolution = Vector2(ProjectSettings.get_setting("display/window/siz
 var score = 0
 
 func _ready():
-	pass
+	GUI = get_tree().get_current_scene().get_node("GUI")
 
 func _unhandled_key_input(event):
 	if Input.is_action_just_pressed("quit"):
@@ -28,10 +28,17 @@ func increment_score():
 	emit_signal("point")
 
 
+func lose():
+	if is_instance_valid(GUI):
+		GUI.lose(score)
+
 func reload():
 	score = 0
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+
+func main_menu():
+	get_tree().change_scene("res://Scenes/Levels/MainMenu.tscn")
 
 func quit():
 	get_tree().quit()

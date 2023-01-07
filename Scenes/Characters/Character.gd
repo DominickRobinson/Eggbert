@@ -10,21 +10,24 @@ var DEATH_GRAVITY = 1.5 * GRAVITY
 const UP = Vector2(0,-1)
 
 onready var anim = $AnimationPlayer
+onready var detect = $Detect
 
 var motion = Vector2()
 var alive = true
 
+func _init():
+	GameManager.score = 0
+	GameManager.connect("point", self, "_on_point")
+	
+	yield(self, "ready")
+	if is_instance_valid($Detect):
+		$Detect.connect("body_entered", self, "_on_obstacle_collision")
+	if is_instance_valid($AnimationPlayer):
+		$AnimationPlayer.connect("animation_finished", self, "_on_AnimationPlayer_animation_finished")
 
 
 func _physics_process(delta):
-	if alive:
-		motion.y += GRAVITY
-		if motion.y > MAX_FALL_SPEED:
-			motion.y = MAX_FALL_SPEED
-		motion = move_and_slide(motion, UP)
-	else:
-		motion.y += DEATH_GRAVITY
-		motion = move_and_slide(motion, UP)
+	pass
 
 func die():
 	alive = false
@@ -33,7 +36,18 @@ func die():
 	motion.y = -400
 	motion.x = 0
 	GRAVITY = 20
+	lose_popup()
 
+
+func lose_popup():
+	yield(get_tree().create_timer(2.0), "timeout")
+	GameManager.lose()
+
+func _on_obstacle_collision(body):
+	if not alive:
+		return
+	if body.is_in_group("Obstacles"):
+		die()
 
 
 
