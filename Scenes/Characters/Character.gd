@@ -36,11 +36,15 @@ func die():
 	motion.y = -400
 	motion.x = 0
 	GRAVITY = 20
+	print("debug start")
+	print("1")
 	lose_popup()
 
 
 func lose_popup():
+	print("2")
 	yield(get_tree().create_timer(2.0), "timeout")
+	print("3")
 	GameManager.lose()
 
 func _on_obstacle_collision(body):

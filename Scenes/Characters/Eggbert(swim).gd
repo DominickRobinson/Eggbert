@@ -11,6 +11,7 @@ var maskResource = preload("res://Scenes/Props/Mask.tscn")
 onready var mask
 
 func _ready():
+	GameManager.mode = GameManager.GameModes.SWIM
 	anim.play("swim")
 	motion.x = HORIZONTAL_SPEED
 	

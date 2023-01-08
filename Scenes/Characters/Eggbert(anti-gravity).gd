@@ -7,6 +7,7 @@ var flap = false
 
 
 func _ready():
+	GameManager.mode = GameManager.GameModes.ANTI_GRAVITY
 	flap()
 	anim.play("glide")
 	$Touch/Button.connect("pressed", self, "flap")

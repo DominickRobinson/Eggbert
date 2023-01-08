@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Themes/Buttons.tres" type="Theme" id=1]
+
+[node name="Buttons" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bar" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -294.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 0, 50 )
+theme = ExtResource( 1 )
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="Bar"]
+use_parent_material = true
+margin_left = 124.0
+margin_right = 274.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 150, 0 )
+text = "Restart"
+
+[node name="Pause" type="Button" parent="Bar"]
+pause_mode = 2
+use_parent_material = true
+margin_right = 120.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 120, 0 )
+text = "Pause"
+
+[node name="Quit" type="Button" parent="Bar"]
+visible = false
+use_parent_material = true
+margin_left = 158.0
+margin_right = 198.0
+margin_bottom = 57.0
+text = "Quit"

@@ -13,3 +13,5 @@ func _on_Sensor_body_entered(body):
 	if body.is_in_group("Players"):
 		if body.alive:
 			GameManager.increment_score()
+		else:
+			body.die()

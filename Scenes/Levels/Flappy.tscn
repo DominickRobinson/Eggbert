@@ -10,34 +10,8 @@
 [node name="Flappy" type="Node2D"]
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
-
-[node name="VBoxContainer" parent="GUI/Instructions/Background/CenterContainer" index="0"]
-margin_top = 80.0
-margin_bottom = 398.0
-
-[node name="Mode" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer" index="0"]
-text = "FLAPPY"
-
-[node name="HBoxContainer" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer" index="3"]
-margin_bottom = 232.0
-
-[node name="Control" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
-margin_bottom = 53.0
-
-[node name="Label" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer/HBoxContainer" index="1"]
-margin_bottom = 53.0
-text = "Tap, click, or press space to FLAP upwards!"
-
-[node name="Control2" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer/HBoxContainer" index="2"]
-margin_bottom = 53.0
-
-[node name="Control2" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer" index="4"]
-margin_top = 242.0
-margin_bottom = 267.0
-
-[node name="START" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer" index="5"]
-margin_top = 277.0
-margin_bottom = 376.0
+mode = "FLAP"
+instructions = "Tap, click, or press space to FLAP upwards!"
 
 [node name="GameCamera(flappy)" parent="." instance=ExtResource( 3 )]
 player_node_path = NodePath("../Eggbert")
@@ -61,5 +35,3 @@ position = Vector2( 1800, -80 )
 
 [node name="Eggbert" parent="." instance=ExtResource( 1 )]
 script = ExtResource( 6 )
-
-[editable path="GUI"]

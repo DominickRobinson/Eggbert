@@ -11,52 +11,8 @@
 [node name="Anti-Gravity" type="Node2D"]
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
-
-[node name="VBoxContainer" parent="GUI/Instructions/Background/CenterContainer" index="0"]
-margin_left = 39.0
-margin_top = 106.0
-margin_right = 576.0
-margin_bottom = 373.0
-
-[node name="Mode" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer" index="0"]
-margin_right = 537.0
-text = "ANTI-GRAVITY"
-
-[node name="Control" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer" index="1"]
-margin_right = 537.0
-
-[node name="Instructions" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer" index="2"]
-margin_right = 537.0
-
-[node name="HBoxContainer" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer" index="3"]
-margin_right = 537.0
-margin_bottom = 232.0
-
-[node name="Control" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
-margin_left = 64.0
-margin_right = 139.0
-margin_bottom = 53.0
-
-[node name="Label" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer/HBoxContainer" index="1"]
-margin_left = 143.0
-margin_right = 393.0
-margin_bottom = 53.0
-text = "Tap, click, or press space to REVERSE GRAVITY!"
-
-[node name="Control2" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer/HBoxContainer" index="2"]
-margin_left = 397.0
-margin_right = 472.0
-margin_bottom = 53.0
-
-[node name="Control2" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer" index="4"]
-margin_top = 242.0
-margin_right = 537.0
-margin_bottom = 267.0
-
-[node name="START" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer" index="5"]
-margin_top = 277.0
-margin_right = 537.0
-margin_bottom = 325.0
+mode = "ANTI-GRAVITY"
+instructions = "Tap, click, or press space to REVERSE GRAVITY!"
 
 [node name="Eggbert" parent="." instance=ExtResource( 7 )]
 script = ExtResource( 8 )
@@ -84,5 +40,3 @@ position = Vector2( 1200, -109 )
 
 [node name="Pipe3" parent="Walls" instance=ExtResource( 4 )]
 position = Vector2( 1800, 13 )
-
-[editable path="GUI"]

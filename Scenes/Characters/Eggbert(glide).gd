@@ -7,6 +7,7 @@ var glide_rotation = 0
 
 
 func _ready():
+	GameManager.mode = GameManager.GameModes.GLIDE
 	motion.x = HORIZONTAL_SPEED
 	anim.play("glide")
 

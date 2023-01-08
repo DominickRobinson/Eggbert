@@ -6,6 +6,7 @@ var flap = false
 
 
 func _ready():
+	GameManager.mode = GameManager.GameModes.FLAP
 	motion.x = HORIZONTAL_SPEED
 	$Touch/Button.connect("pressed", self, "flap")
 

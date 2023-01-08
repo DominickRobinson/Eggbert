@@ -14,10 +14,12 @@ func _on_Float_pressed():
 func _on_Antigravity_pressed():
 	get_tree().change_scene("res://Scenes/Levels/Anti-Gravity.tscn")
 
-
+func _on_Leaderboards_pressed():
+	$CanvasLayer/Leaderboard.show()
 
 func _on_Quit_pressed():
 	get_tree().quit()
+
 
 
 

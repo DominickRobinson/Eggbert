@@ -10,34 +10,8 @@
 [node name="Glide" type="Node2D"]
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
-
-[node name="VBoxContainer" parent="GUI/Instructions/Background/CenterContainer" index="0"]
-margin_top = 80.0
-margin_bottom = 398.0
-
-[node name="Mode" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer" index="0"]
-text = "GLIDE"
-
-[node name="HBoxContainer" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer" index="3"]
-margin_bottom = 174.0
-
-[node name="Control" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer/HBoxContainer" index="0"]
-margin_bottom = 53.0
-
-[node name="Label" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer/HBoxContainer" index="1"]
-margin_bottom = 53.0
-text = "Tap, click, or press space and hold to GLIDE upwards!"
-
-[node name="Control2" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer/HBoxContainer" index="2"]
-margin_bottom = 53.0
-
-[node name="Control2" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer" index="4"]
-margin_top = 184.0
-margin_bottom = 209.0
-
-[node name="START" parent="GUI/Instructions/Background/CenterContainer/VBoxContainer" index="5"]
-margin_top = 219.0
-margin_bottom = 318.0
+mode = "GLIDE"
+instructions = "Tap, click, or press space and hold to GLIDE upwards!"
 
 [node name="GameCamera(glide)" parent="." instance=ExtResource( 3 )]
 player_node_path = NodePath("../Eggbert")
@@ -64,5 +38,3 @@ position = Vector2( 2000, -80 )
 
 [node name="Eggbert" parent="." instance=ExtResource( 6 )]
 script = ExtResource( 7 )
-
-[editable path="GUI"]

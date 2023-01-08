@@ -1,0 +1,156 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Themes/FontLarge.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/UI/LeaderboardTab.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Icons/X.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Themes/Buttons.tres" type="Theme" id=4]
+[ext_resource path="res://Scenes/UI/Leaderboard.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Fonts/LEMONMILK.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/Icons/refresh.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Themes/FontMedium.tres" type="DynamicFont" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 6 )
+
+[node name="Leaderboard" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 150, 94 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Screen" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1024, 600 )
+color = Color( 0.419608, 0.419608, 0.419608, 0.247059 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 675, 525 )
+color = Color( 0, 0, 0, 0.792157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+anchor_left = 0.333
+anchor_top = 0.5
+anchor_right = 0.4
+anchor_bottom = 0.5
+margin_left = -339.992
+margin_top = -300.0
+margin_right = 363.4
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CenterContainer"]
+margin_left = 61.0
+margin_top = 22.0
+margin_right = 711.0
+margin_bottom = 578.0
+theme = ExtResource( 4 )
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="Panel/CenterContainer/VBoxContainer"]
+margin_right = 650.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 500, 50 )
+custom_fonts/font = ExtResource( 1 )
+text = "LEADERBOARD"
+align = 1
+valign = 1
+
+[node name="Space" type="Control" parent="Panel/CenterContainer/VBoxContainer"]
+visible = false
+margin_top = 106.0
+margin_right = 550.0
+margin_bottom = 131.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="TabContainer" type="TabContainer" parent="Panel/CenterContainer/VBoxContainer"]
+margin_top = 106.0
+margin_right = 650.0
+margin_bottom = 556.0
+rect_min_size = Vector2( 650, 450 )
+custom_fonts/font = SubResource( 1 )
+
+[node name="Flappy" parent="Panel/CenterContainer/VBoxContainer/TabContainer" instance=ExtResource( 2 )]
+margin_left = 4.0
+margin_top = 45.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Glide" parent="Panel/CenterContainer/VBoxContainer/TabContainer" instance=ExtResource( 2 )]
+visible = false
+margin_left = 4.0
+margin_top = 45.0
+margin_right = -4.0
+margin_bottom = -4.0
+leaderboard_name = "glide"
+
+[node name="Swim" parent="Panel/CenterContainer/VBoxContainer/TabContainer" instance=ExtResource( 2 )]
+visible = false
+margin_left = 4.0
+margin_top = 45.0
+margin_right = -4.0
+margin_bottom = -4.0
+leaderboard_name = "swim"
+
+[node name="Anti-Gravity" parent="Panel/CenterContainer/VBoxContainer/TabContainer" instance=ExtResource( 2 )]
+visible = false
+margin_left = 4.0
+margin_top = 45.0
+margin_right = -4.0
+margin_bottom = -4.0
+leaderboard_name = "anti_gravity"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -251.0
+margin_right = -15.0
+margin_bottom = 132.0
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Refresh" type="Button" parent="Panel/HBoxContainer"]
+margin_left = 3.0
+margin_right = 103.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 100, 100 )
+icon = ExtResource( 7 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close" type="Button" parent="Panel/HBoxContainer"]
+margin_left = 133.0
+margin_right = 233.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 100, 100 )
+custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
+custom_fonts/font = ExtResource( 8 )
+icon = ExtResource( 3 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="pressed" from="Panel/HBoxContainer/Refresh" to="." method="refresh_leaderboards"]
+[connection signal="pressed" from="Panel/HBoxContainer/Close" to="." method="_on_Close_pressed"]
