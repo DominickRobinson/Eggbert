@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Props/rocket.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Particles/ElectricTrail.tscn" type="PackedScene" id=3]
+
+[node name="Rocket" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 10, -13 )
+rotation = -0.849026
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 2 )
+
+[node name="ElectricTrail" parent="." instance=ExtResource( 3 )]

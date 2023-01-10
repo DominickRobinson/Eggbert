@@ -1,6 +1,6 @@
 extends Character
 
-export var SWIM_SPEED := 4
+export var SWIM_SPEED := 5
 
 var float_playback_speed
 var click_position = global_position
@@ -14,7 +14,6 @@ func _ready():
 	GameManager.mode = GameManager.GameModes.SWIM
 	anim.play("swim")
 	motion.x = HORIZONTAL_SPEED
-	
 	mask = maskResource.instance()
 	$Body/Head.add_child(mask)
 
@@ -25,9 +24,7 @@ func _physics_process(delta):
 		swim()
 		motion.x = HORIZONTAL_SPEED
 		motion = move_and_slide(motion, UP)
-	else:
-		motion.y += DEATH_GRAVITY
-		motion = move_and_slide(motion, UP)
+
 
 func swim():
 	if swim:
@@ -42,13 +39,7 @@ func swim():
 		anim.playback_speed = float_playback_speed
 
 func die():
-	alive = false
-	anim.stop()
-	anim.play("death")
-	anim.playback_speed = .5
-	DEATH_GRAVITY = -1
-	motion.x = 0
-	motion.y *= -.3
+	.die()
 	
 	mask.queue_free()
 	
@@ -59,8 +50,7 @@ func die():
 	mask.scale.x *= $Body.scale.x * 1.2
 	mask.scale.y *= $Body.scale.y * 1.2
 	mask.global_position = $Body/Head.global_position
-	
-	lose_popup()
+
 
 
 

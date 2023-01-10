@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Characters/Eggbert.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Fonts/coolvetica.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/Fonts/LEMONMILK.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Assets/Themes/Buttons.tres" type="Theme" id=6]
+[ext_resource path="res://Assets/Themes/Menu.tres" type="Theme" id=6]
 [ext_resource path="res://Scenes/Characters/Eggbert(wave).gd" type="Script" id=7]
 [ext_resource path="res://Scenes/UI/Leaderboard.tscn" type="PackedScene" id=8]
 
@@ -86,6 +86,7 @@ margin_bottom = 547.0
 margin_right = 500.0
 margin_bottom = 335.0
 rect_min_size = Vector2( 500, 0 )
+theme = ExtResource( 6 )
 custom_constants/separation = 10
 
 [node name="GameModes" type="RichTextLabel" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
@@ -103,7 +104,6 @@ margin_top = 70.0
 margin_right = 500.0
 margin_bottom = 115.0
 rect_min_size = Vector2( 0, 45 )
-theme = ExtResource( 6 )
 text = "Flappy"
 
 [node name="Glide" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
@@ -111,23 +111,20 @@ margin_top = 125.0
 margin_right = 500.0
 margin_bottom = 170.0
 rect_min_size = Vector2( 0, 45 )
-theme = ExtResource( 6 )
 text = "Glide"
 
-[node name="Float" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Swim" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 180.0
 margin_right = 500.0
 margin_bottom = 225.0
 rect_min_size = Vector2( 0, 45 )
-theme = ExtResource( 6 )
-text = "Float"
+text = "Swim"
 
 [node name="Anti-gravity" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 235.0
 margin_right = 500.0
 margin_bottom = 280.0
 rect_min_size = Vector2( 0, 45 )
-theme = ExtResource( 6 )
 text = "Anti-Gravity"
 
 [node name="Leaderboards" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
@@ -135,7 +132,6 @@ margin_top = 290.0
 margin_right = 500.0
 margin_bottom = 335.0
 rect_min_size = Vector2( 0, 45 )
-theme = ExtResource( 6 )
 text = "Leaderboards"
 
 [node name="Quit" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
@@ -143,7 +139,6 @@ visible = false
 margin_top = 345.0
 margin_right = 500.0
 margin_bottom = 384.0
-theme = ExtResource( 6 )
 text = "Quit"
 
 [node name="Leaderboard" parent="CanvasLayer" instance=ExtResource( 8 )]
@@ -151,7 +146,7 @@ visible = false
 
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Flappy" to="." method="_on_Flappy_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Glide" to="." method="_on_Glide_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Float" to="." method="_on_Float_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Swim" to="." method="_on_Float_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Anti-gravity" to="." method="_on_Antigravity_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Leaderboards" to="." method="_on_Leaderboards_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

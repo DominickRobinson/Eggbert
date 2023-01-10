@@ -19,10 +19,6 @@ func _unhandled_key_input(event):
 func _physics_process(delta):
 	if alive:
 		motion = move_and_slide(motion, UP)
-	else:
-		motion.x = lerp(motion.x, 0, .02)
-		motion.y += DEATH_GRAVITY
-		motion = move_and_slide(motion, UP)
 
 
 func flap():
@@ -33,15 +29,10 @@ func flap():
 	rotation = FLIGHT_ANGLE
 
 func die():
-	alive = false
-	anim.stop()
-	anim.play("death")
-	motion.y = -300
-	motion.x = -HORIZONTAL_SPEED * 2
-	lose_popup()
-	$Detect.collision_layer = 0
-	$Detect.collision_mask = 0
-
+	.die()
+	
+	yield(get_tree().create_timer(2.0), "timeout")
+	explode()
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -54,3 +45,7 @@ func _on_point():
 
 func _on_Button_pressed():
 	flap()
+
+
+func explode():
+	queue_free()

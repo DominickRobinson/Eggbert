@@ -59,9 +59,9 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PausePanel/CenterContainer"]
 margin_left = 77.0
-margin_top = 8.0
+margin_top = 23.0
 margin_right = 598.0
-margin_bottom = 516.0
+margin_bottom = 501.0
 theme = ExtResource( 4 )
 custom_constants/separation = 10
 
@@ -75,29 +75,28 @@ align = 1
 valign = 1
 
 [node name="Control" type="Control" parent="PausePanel/CenterContainer/VBoxContainer"]
-visible = false
 margin_top = 106.0
 margin_right = 521.0
 margin_bottom = 106.0
 
 [node name="Score" type="RichTextLabel" parent="PausePanel/CenterContainer/VBoxContainer"]
-margin_top = 106.0
+margin_top = 116.0
 margin_right = 521.0
-margin_bottom = 156.0
+margin_bottom = 166.0
 rect_min_size = Vector2( 0, 50 )
 custom_fonts/normal_font = SubResource( 5 )
 bbcode_enabled = true
 
 [node name="Control2" type="Control" parent="PausePanel/CenterContainer/VBoxContainer"]
 visible = false
-margin_top = 166.0
+margin_top = 176.0
 margin_right = 521.0
-margin_bottom = 166.0
+margin_bottom = 176.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PausePanel/CenterContainer/VBoxContainer"]
-margin_top = 166.0
+margin_top = 176.0
 margin_right = 521.0
-margin_bottom = 215.0
+margin_bottom = 225.0
 
 [node name="Space" type="Control" parent="PausePanel/CenterContainer/VBoxContainer/HBoxContainer"]
 margin_right = 35.0
@@ -138,37 +137,44 @@ rect_min_size = Vector2( 35, 0 )
 
 [node name="SubmitScore" type="Button" parent="PausePanel/CenterContainer/VBoxContainer"]
 use_parent_material = true
-margin_top = 225.0
+margin_top = 235.0
 margin_right = 521.0
-margin_bottom = 275.0
+margin_bottom = 285.0
 rect_min_size = Vector2( 0, 50 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 0.576471 )
 custom_colors/font_color_hover = Color( 1, 0.756863, 0.384314, 1 )
 text = "Submit Score to Leaderboard"
 
 [node name="ViewLeaderboard" type="Button" parent="PausePanel/CenterContainer/VBoxContainer"]
-margin_top = 285.0
+margin_top = 295.0
 margin_right = 521.0
-margin_bottom = 328.0
+margin_bottom = 338.0
 text = "View Leaderboard"
+
+[node name="Space" type="Control" parent="PausePanel/CenterContainer/VBoxContainer"]
+margin_top = 348.0
+margin_right = 521.0
+margin_bottom = 358.0
+rect_min_size = Vector2( 35, 10 )
 
 [node name="Restart" type="Button" parent="PausePanel/CenterContainer/VBoxContainer"]
 use_parent_material = true
-margin_top = 338.0
+margin_top = 368.0
 margin_right = 521.0
-margin_bottom = 388.0
+margin_bottom = 418.0
 rect_min_size = Vector2( 0, 50 )
 text = "Restart"
 
 [node name="MainMenu" type="Button" parent="PausePanel/CenterContainer/VBoxContainer"]
 use_parent_material = true
-margin_top = 398.0
+margin_top = 428.0
 margin_right = 521.0
-margin_bottom = 448.0
+margin_bottom = 478.0
 rect_min_size = Vector2( 0, 50 )
 text = "Go to Main Menu"
 
 [node name="Quit" type="Button" parent="PausePanel/CenterContainer/VBoxContainer"]
+visible = false
 use_parent_material = true
 margin_top = 458.0
 margin_right = 521.0

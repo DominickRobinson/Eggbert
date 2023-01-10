@@ -1,17 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Themes/FontLarge.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/UI/LeaderboardTab.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Icons/X.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Themes/Buttons.tres" type="Theme" id=4]
 [ext_resource path="res://Scenes/UI/Leaderboard.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Fonts/LEMONMILK.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/Themes/FontSmall-Medium.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Assets/Icons/refresh.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Themes/FontMedium.tres" type="DynamicFont" id=8]
-
-[sub_resource type="DynamicFont" id=1]
-size = 20
-font_data = ExtResource( 6 )
 
 [node name="Leaderboard" type="Control"]
 anchor_right = 1.0
@@ -82,34 +78,37 @@ margin_top = 106.0
 margin_right = 650.0
 margin_bottom = 556.0
 rect_min_size = Vector2( 650, 450 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 6 )
 
 [node name="Flappy" parent="Panel/CenterContainer/VBoxContainer/TabContainer" instance=ExtResource( 2 )]
 margin_left = 4.0
-margin_top = 45.0
+margin_top = 57.0
 margin_right = -4.0
 margin_bottom = -4.0
+bg_color = Color( 0, 0.25098, 0, 1 )
 
 [node name="Glide" parent="Panel/CenterContainer/VBoxContainer/TabContainer" instance=ExtResource( 2 )]
 visible = false
 margin_left = 4.0
-margin_top = 45.0
+margin_top = 57.0
 margin_right = -4.0
 margin_bottom = -4.0
+bg_color = Color( 0.25098, 0, 0, 1 )
 leaderboard_name = "glide"
 
 [node name="Swim" parent="Panel/CenterContainer/VBoxContainer/TabContainer" instance=ExtResource( 2 )]
 visible = false
 margin_left = 4.0
-margin_top = 45.0
+margin_top = 57.0
 margin_right = -4.0
 margin_bottom = -4.0
+bg_color = Color( 0, 0, 0.25098, 1 )
 leaderboard_name = "swim"
 
 [node name="Anti-Gravity" parent="Panel/CenterContainer/VBoxContainer/TabContainer" instance=ExtResource( 2 )]
 visible = false
 margin_left = 4.0
-margin_top = 45.0
+margin_top = 57.0
 margin_right = -4.0
 margin_bottom = -4.0
 leaderboard_name = "anti_gravity"

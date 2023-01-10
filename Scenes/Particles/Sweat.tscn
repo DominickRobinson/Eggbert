@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Particles/Sweat.gd" type="Script" id=1]
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.373874 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=3]
+curve = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 2
+emission_box_extents = Vector3( 5, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 10.0
+gravity = Vector3( 0, 30, 0 )
+initial_velocity = 40.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 3.0
+scale_curve = SubResource( 3 )
+color = Color( 0, 0, 1, 1 )
+
+[node name="Sweat" type="Particles2D"]
+emitting = false
+lifetime = 2.0
+process_material = SubResource( 1 )
+script = ExtResource( 1 )

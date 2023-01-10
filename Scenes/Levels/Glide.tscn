@@ -1,11 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
+[ext_resource path="res://Scenes/Characters/GameCamera.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Misc/GameCamera(glide).tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Particles/Snow.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Props/Pipes/Pipe-Red.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Backgrounds/Background(glide).tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Characters/Eggbert.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Characters/Eggbert(glide).gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 511.5, 47.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 45, 364 )
 
 [node name="Glide" type="Node2D"]
 
@@ -13,8 +20,32 @@
 mode = "GLIDE"
 instructions = "Tap, click, or press space and hold to GLIDE upwards!"
 
-[node name="GameCamera(glide)" parent="." instance=ExtResource( 3 )]
+[node name="GameCamera(glide)" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 1 )
 player_node_path = NodePath("../Eggbert")
+wall_spawn_range = [ -200, 200 ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GameCamera(glide)" groups=["Obstacles"]]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera(glide)/StaticBody2D"]
+position = Vector2( 0, 400 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GameCamera(glide)/StaticBody2D"]
+position = Vector2( 0, -400 )
+shape = SubResource( 1 )
+
+[node name="Reset" type="Area2D" parent="GameCamera(glide)"]
+position = Vector2( -750, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera(glide)/Reset"]
+position = Vector2( -200, 1 )
+shape = SubResource( 2 )
+
+[node name="Particles2D" parent="GameCamera(glide)" instance=ExtResource( 3 )]
+position = Vector2( -24, -314 )
 
 [node name="Background(glide)" parent="." instance=ExtResource( 5 )]
 
@@ -38,3 +69,5 @@ position = Vector2( 2000, -80 )
 
 [node name="Eggbert" parent="." instance=ExtResource( 6 )]
 script = ExtResource( 7 )
+
+[connection signal="body_entered" from="GameCamera(glide)/Reset" to="GameCamera(glide)" method="_on_Reset_body_entered"]

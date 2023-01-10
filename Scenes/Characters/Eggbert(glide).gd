@@ -20,9 +20,7 @@ func _physics_process(delta):
 		motion = Vector2(1,0).rotated(glide_rotation) * HORIZONTAL_SPEED
 		motion = move_and_slide(motion, UP)
 		rotation = glide_rotation
-	else:
-		motion.y += DEATH_GRAVITY
-		motion = move_and_slide(motion, UP)
+
 
 
 func glide():

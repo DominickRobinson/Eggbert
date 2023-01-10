@@ -1,11 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Scenes/Misc/GameCamera(glide).tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Characters/GameCamera.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Backgrounds/Background(swim).tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Props/Pipes/Pipe-Red.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Characters/Eggbert.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Characters/Eggbert(swim).gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 511.5, 47.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 511.5, 47.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 45, 364 )
 
 [node name="Swim" type="Node2D"]
 
@@ -16,11 +25,10 @@ instructions = "Tap or click and hold to where you want to SWIM up or down to!"
 [node name="Eggbert" parent="." instance=ExtResource( 6 )]
 script = ExtResource( 7 )
 HORIZONTAL_SPEED = 200
+GRAVITY = -5
+DEATH_MOTION_Y = 200
 
 [node name="Background(float)" parent="." instance=ExtResource( 3 )]
-
-[node name="GameCamera(glide)" parent="." instance=ExtResource( 1 )]
-player_node_path = NodePath("../Eggbert")
 
 [node name="Walls" type="Node2D" parent="."]
 position = Vector2( 66, 25 )
@@ -41,5 +49,32 @@ position = Vector2( 1650, -80 )
 position = Vector2( 2000, -80 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 z_index = 3
 color = Color( 0.435294, 0.443137, 1, 1 )
+
+[node name="GameCamera(flappy)" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 1 )
+player_node_path = NodePath("../Eggbert")
+wall_spawn_range = [ -180, 80 ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GameCamera(flappy)" groups=["Obstacles"]]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera(flappy)/StaticBody2D"]
+position = Vector2( -3, 259 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GameCamera(flappy)/StaticBody2D"]
+position = Vector2( 0, -400 )
+shape = SubResource( 3 )
+
+[node name="Reset" type="Area2D" parent="GameCamera(flappy)"]
+position = Vector2( -750, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera(flappy)/Reset"]
+position = Vector2( -203, 6 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="GameCamera(flappy)/Reset" to="GameCamera(flappy)" method="_on_Reset_body_entered"]

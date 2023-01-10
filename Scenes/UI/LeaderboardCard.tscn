@@ -4,11 +4,10 @@
 [ext_resource path="res://Assets/Themes/LeaderboardCard.tres" type="Theme" id=3]
 
 [node name="LeaderboardCard" type="ColorRect" groups=["Cards"]]
-anchor_right = 0.488281
-anchor_bottom = 0.125
-margin_right = -50.0
-rect_min_size = Vector2( 500, 75 )
-color = Color( 0, 0, 0, 0 )
+anchor_bottom = 0.0716667
+margin_bottom = 2.0
+rect_min_size = Vector2( 500, 45 )
+color = Color( 0, 0, 0, 1 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -17,20 +16,21 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_min_size = Vector2( 500, 45 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Space" type="Control" parent="HBoxContainer"]
 margin_right = 35.0
-margin_bottom = 75.0
+margin_bottom = 45.0
 rect_min_size = Vector2( 35, 0 )
 
 [node name="Name" type="Label" parent="HBoxContainer"]
 margin_left = 39.0
-margin_top = 18.0
+margin_top = 3.0
 margin_right = 264.0
-margin_bottom = 57.0
+margin_bottom = 42.0
 rect_min_size = Vector2( 225, 0 )
 theme = ExtResource( 3 )
 text = "*insert name   "
@@ -38,13 +38,13 @@ text = "*insert name   "
 [node name="Space2" type="Control" parent="HBoxContainer"]
 margin_left = 268.0
 margin_right = 303.0
-margin_bottom = 75.0
+margin_bottom = 45.0
 rect_min_size = Vector2( 35, 0 )
 
 [node name="Score" type="Label" parent="HBoxContainer"]
 margin_left = 307.0
-margin_top = 18.0
+margin_top = 3.0
 margin_right = 423.0
-margin_bottom = 57.0
+margin_bottom = 42.0
 theme = ExtResource( 3 )
 text = "*SCORE"

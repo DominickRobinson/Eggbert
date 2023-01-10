@@ -27,8 +27,7 @@ __meta__ = {
 
 [node name="Restart" type="Button" parent="Bar"]
 use_parent_material = true
-margin_left = 124.0
-margin_right = 274.0
+margin_right = 150.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 150, 0 )
 text = "Restart"
@@ -36,7 +35,8 @@ text = "Restart"
 [node name="Pause" type="Button" parent="Bar"]
 pause_mode = 2
 use_parent_material = true
-margin_right = 120.0
+margin_left = 154.0
+margin_right = 274.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 120, 0 )
 text = "Pause"

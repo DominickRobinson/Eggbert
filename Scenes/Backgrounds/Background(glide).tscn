@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Backgrounds/eggbert-bg.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Backgrounds/ParallaxEnvironment.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Backgrounds/sun.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Backgrounds/Sun.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Backgrounds/Mountains/Sky.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Backgrounds/Mountains/Clouds .png" type="Texture" id=6]
+[ext_resource path="res://Assets/Backgrounds/Plains/Mountains_.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Backgrounds/Clouds.gd" type="Script" id=8]
 
 [sub_resource type="Animation" id=1]
@@ -93,6 +96,7 @@ script = ExtResource( 2 )
 [node name="Background" type="ParallaxBackground" parent="."]
 
 [node name="Sky" type="ParallaxLayer" parent="Background"]
+visible = false
 motion_scale = Vector2( 0, 1 )
 motion_mirroring = Vector2( 1024, 0 )
 
@@ -100,10 +104,18 @@ motion_mirroring = Vector2( 1024, 0 )
 texture = ExtResource( 1 )
 vframes = 7
 
+[node name="Sky2" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 3600, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background/Sky2"]
+position = Vector2( 1284, 1 )
+texture = ExtResource( 5 )
+
 [node name="Sun" type="ParallaxLayer" parent="Background"]
 motion_scale = Vector2( 0.05, 1 )
-motion_offset = Vector2( 512, 0 )
-motion_mirroring = Vector2( 1024, 0 )
+motion_offset = Vector2( -400, 0 )
+motion_mirroring = Vector2( 3600, 0 )
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Background/Sun"]
@@ -115,25 +127,35 @@ anims/RESET = SubResource( 1 )
 anims/sun = SubResource( 2 )
 
 [node name="Clouds" type="ParallaxLayer" parent="Background"]
-motion_scale = Vector2( 0.5, 1 )
-motion_mirroring = Vector2( 1024, 0 )
+modulate = Color( 1, 1, 1, 0.541176 )
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 3600, 0 )
 script = ExtResource( 8 )
-CLOUD_SPEED = -15
 
 [node name="Sprite" type="Sprite" parent="Background/Clouds"]
-texture = ExtResource( 1 )
-vframes = 7
-frame = 2
+modulate = Color( 0.576471, 0.576471, 0.576471, 0.74902 )
+texture = ExtResource( 6 )
 
 [node name="Mountains" type="ParallaxLayer" parent="Background"]
 position = Vector2( 0, 1 )
-motion_scale = Vector2( 0.3, 1 )
-motion_mirroring = Vector2( 1024, 0 )
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 1100, 0 )
 
 [node name="Sprite" type="Sprite" parent="Background/Mountains"]
-texture = ExtResource( 1 )
-vframes = 7
-frame = 3
+texture = ExtResource( 7 )
 
 [node name="Foreground" type="ParallaxBackground" parent="."]
 layer = 1
+
+[node name="Clouds2" type="ParallaxLayer" parent="Foreground"]
+modulate = Color( 1, 1, 1, 0.952941 )
+motion_scale = Vector2( 1.2, 1 )
+motion_mirroring = Vector2( 7200, 0 )
+script = ExtResource( 8 )
+CLOUD_SPEED = -30
+
+[node name="Sprite" type="Sprite" parent="Foreground/Clouds2"]
+modulate = Color( 1, 1, 1, 0.615686 )
+position = Vector2( 442, -189 )
+scale = Vector2( -2, -2 )
+texture = ExtResource( 6 )

@@ -5,7 +5,7 @@ export var MAX_FALL_SPEED := 400
 export var HORIZONTAL_SPEED := 125
 var og_horizontal_speed = HORIZONTAL_SPEED
 export var GRAVITY := 5
-var DEATH_GRAVITY = 1.5 * GRAVITY
+export var DEATH_MOTION_Y := -300
 
 const UP = Vector2(0,-1)
 
@@ -27,24 +27,24 @@ func _init():
 
 
 func _physics_process(delta):
-	pass
+	if not alive:
+		motion.x = lerp(motion.x, 0, .02)
+		motion.y += GRAVITY
+		motion = move_and_slide(motion, UP)
 
 func die():
 	alive = false
 	anim.stop()
 	anim.play("death")
-	motion.y = -400
-	motion.x = 0
-	GRAVITY = 20
-	print("debug start")
-	print("1")
+	motion.y = DEATH_MOTION_Y
+	motion.x = -HORIZONTAL_SPEED
 	lose_popup()
+	$Detect.collision_layer = 0
+	$Detect.collision_mask = 0
 
 
 func lose_popup():
-	print("2")
-	yield(get_tree().create_timer(2.0), "timeout")
-	print("3")
+	yield(get_tree().create_timer(1.0), "timeout")
 	GameManager.lose()
 
 func _on_obstacle_collision(body):

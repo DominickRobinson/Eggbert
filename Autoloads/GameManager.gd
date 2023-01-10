@@ -39,10 +39,8 @@ func increment_score():
 
 
 func lose():
-	print("4")
 	GUI = get_GUI()
 	if is_instance_valid(GUI):
-		print("5")
 		GUI.lose(score)
 
 func reload():

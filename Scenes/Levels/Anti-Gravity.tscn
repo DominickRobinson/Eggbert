@@ -18,11 +18,11 @@ instructions = "Tap, click, or press space to REVERSE GRAVITY!"
 script = ExtResource( 8 )
 HORIZONTAL_SPEED = 300
 GRAVITY = 0
+DEATH_MOTION_Y = 0
+FLIGHT_ANGLE_DEGREES = 120
 
 [node name="ElectricTrail" parent="Eggbert" instance=ExtResource( 6 )]
-show_behind_parent = true
-position = Vector2( 0, 12 )
-length = 75
+offset = Vector2( 0, 5 )
 
 [node name="Background(anti-gravity)" parent="." instance=ExtResource( 1 )]
 
@@ -36,7 +36,6 @@ position = Vector2( 66, 25 )
 position = Vector2( 600, -27 )
 
 [node name="Pipe2" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 1200, -109 )
+position = Vector2( 1500, -109 )
 
-[node name="Pipe3" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 1800, 13 )
+[editable path="Eggbert"]
