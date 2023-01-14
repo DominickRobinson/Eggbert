@@ -27,6 +27,7 @@ func flap():
 	FLIGHT_ANGLE *= -1
 	motion = Vector2(cos(FLIGHT_ANGLE), sin(FLIGHT_ANGLE)) * HORIZONTAL_SPEED
 	rotation = FLIGHT_ANGLE
+	GameManager.play_audio("res://Assets/SoundEffects/zoom.mp3", 20)
 
 func die():
 	.die()

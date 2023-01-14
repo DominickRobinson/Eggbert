@@ -7,6 +7,7 @@ var leaderboards
 
 func _ready():
 	leaderboards = $Panel/CenterContainer/VBoxContainer/TabContainer.get_children()
+	hide()
 
 
 func _on_Close_pressed():

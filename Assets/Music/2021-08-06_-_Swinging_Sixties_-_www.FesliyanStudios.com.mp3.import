@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/2021-08-06_-_Swinging_Sixties_-_www.FesliyanStudios.com.mp3-0decf43a8ecb402d986f787e1abf418f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/2021-08-06_-_Swinging_Sixties_-_www.FesliyanStudios.com.mp3"
+dest_files=[ "res://.import/2021-08-06_-_Swinging_Sixties_-_www.FesliyanStudios.com.mp3-0decf43a8ecb402d986f787e1abf418f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

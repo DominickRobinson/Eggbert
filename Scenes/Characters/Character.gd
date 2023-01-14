@@ -15,6 +15,11 @@ onready var detect = $Detect
 var motion = Vector2()
 var alive = true
 
+var mee = true
+var mee_path = "res://Assets/SoundEffects/mee.mp3"
+var mo_path = "res://Assets/SoundEffects/mo.mp3"
+
+
 func _init():
 	GameManager.score = 0
 	GameManager.connect("point", self, "_on_point")
@@ -41,6 +46,7 @@ func die():
 	lose_popup()
 	$Detect.collision_layer = 0
 	$Detect.collision_mask = 0
+	GameManager.play_audio("res://Assets/SoundEffects/ow.mp3", 15)
 
 
 func lose_popup():
@@ -55,6 +61,12 @@ func _on_obstacle_collision(body):
 
 
 
+func mee_moo():
+	if mee:
+		GameManager.play_audio(mee_path, 15)
+	else:
+		GameManager.play_audio(mo_path, 20)
+	mee = not mee
 
 
 

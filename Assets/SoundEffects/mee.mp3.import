@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mee.mp3-564ff5b062d9596e52f488656affa0c8.mp3str"
+
+[deps]
+
+source_file="res://Assets/SoundEffects/mee.mp3"
+dest_files=[ "res://.import/mee.mp3-564ff5b062d9596e52f488656affa0c8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -28,7 +28,7 @@ func flap():
 	motion.y = -FLAP
 	anim.stop()
 	anim.play("flap")
-
+	mee_moo()
 
 
 

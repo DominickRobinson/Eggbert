@@ -45,6 +45,13 @@ enabled=PoolStringArray( "res://addons/silent_wolf/plugin.cfg" )
 "import etc"=false
 compression=false
 
+[importer_defaults]
+
+mp3={
+"loop": false,
+"loop_offset": 0
+}
+
 [input]
 
 flap={

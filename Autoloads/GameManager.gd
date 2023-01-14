@@ -48,6 +48,17 @@ func reload():
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
+func play_audio(filepath = "", vol = 0):
+	var a = AudioStreamPlayer.new()
+	a.stream = load(filepath)
+	a.volume_db = vol
+	get_tree().get_current_scene().add_child(a)
+	a.play()
+	return a
+#	yield(a, "finished")
+#	a.queue_free()
+
+
 func main_menu():
 	get_tree().change_scene("res://Scenes/Levels/MainMenu.tscn")
 

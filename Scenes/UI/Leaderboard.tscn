@@ -1,13 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Themes/FontLarge.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/UI/LeaderboardTab.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Icons/X.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Themes/Menu.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Themes/Buttons.tres" type="Theme" id=4]
 [ext_resource path="res://Scenes/UI/Leaderboard.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Themes/FontSmall-Medium.tres" type="DynamicFont" id=6]
-[ext_resource path="res://Assets/Icons/refresh.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Themes/FontMedium.tres" type="DynamicFont" id=8]
 
 [node name="Leaderboard" type="Control"]
 anchor_right = 1.0
@@ -116,10 +114,12 @@ leaderboard_name = "anti_gravity"
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -251.0
-margin_right = -15.0
-margin_bottom = 132.0
-custom_constants/separation = 30
+margin_left = -246.0
+margin_top = 8.0
+margin_right = -5.0
+margin_bottom = 68.0
+theme = ExtResource( 3 )
+custom_constants/separation = 10
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -127,25 +127,23 @@ __meta__ = {
 
 [node name="Refresh" type="Button" parent="Panel/HBoxContainer"]
 margin_left = 3.0
-margin_right = 103.0
-margin_bottom = 132.0
-rect_min_size = Vector2( 100, 100 )
-icon = ExtResource( 7 )
-flat = true
+margin_right = 128.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 125, 0 )
+theme = ExtResource( 3 )
+text = "Refresh"
 expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Close" type="Button" parent="Panel/HBoxContainer"]
-margin_left = 133.0
-margin_right = 233.0
-margin_bottom = 132.0
-rect_min_size = Vector2( 100, 100 )
-custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
-custom_fonts/font = ExtResource( 8 )
-icon = ExtResource( 3 )
-flat = true
+margin_left = 138.0
+margin_right = 238.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 100, 0 )
+theme = ExtResource( 3 )
+text = "Back"
 expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": true

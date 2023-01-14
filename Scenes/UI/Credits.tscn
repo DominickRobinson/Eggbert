@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Themes/FontLarge.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Themes/LeaderboardCard.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Themes/Menu.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Themes/Buttons.tres" type="Theme" id=4]
+[ext_resource path="res://Scenes/UI/Credits.gd" type="Script" id=5]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 150, 94 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Screen" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1024, 600 )
+color = Color( 0.419608, 0.419608, 0.419608, 0.247059 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -199.5
+margin_top = -256.0
+margin_right = 199.5
+margin_bottom = 256.0
+color = Color( 0, 0, 0, 0.909804 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.13037
+anchor_top = 0.0933333
+anchor_right = 0.631111
+anchor_bottom = 0.92
+margin_left = 7.62939e-06
+theme = ExtResource( 4 )
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+margin_right = 304.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 1 )
+text = "Credits"
+
+[node name="Dom" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 116.0
+margin_right = 304.0
+margin_bottom = 197.0
+theme = ExtResource( 2 )
+text = "Dominick Robinson
+ - Programming"
+
+[node name="Aleca" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 217.0
+margin_right = 304.0
+margin_bottom = 298.0
+theme = ExtResource( 2 )
+text = "Alexa Carl
+ - Art"
+
+[node name="Fesliyan" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 318.0
+margin_right = 304.0
+margin_bottom = 399.0
+theme = ExtResource( 2 )
+text = "Fesliyan Studios
+ - Music"
+
+[node name="Close" type="Button" parent="Panel"]
+anchor_left = 0.744361
+anchor_top = 0.900391
+anchor_right = 0.982456
+anchor_bottom = 0.984375
+theme = ExtResource( 3 )
+text = "Back"
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="pressed" from="Panel/Close" to="." method="_on_Close_pressed"]

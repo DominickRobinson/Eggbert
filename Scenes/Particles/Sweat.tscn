@@ -29,4 +29,3 @@ lifetime = 2.0
 local_coords = false
 process_material = SubResource( 1 )
 script = ExtResource( 1 )
-activation_dist = 8000

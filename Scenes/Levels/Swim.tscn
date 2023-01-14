@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Characters/GameCamera.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Levels/Level.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Backgrounds/Background(swim).tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Props/Pipes/Pipe-Red.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Props/Pipes/Pipe.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Characters/Eggbert.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Characters/Eggbert(swim).gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Particles/Bubbles.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 511.5, 47.5 )
@@ -17,6 +19,8 @@ extents = Vector2( 511.5, 47.5 )
 extents = Vector2( 45, 364 )
 
 [node name="Swim" type="Node2D"]
+script = ExtResource( 2 )
+music_filepath = "res://Assets/Music/2020-09-14_-_Tropical_Keys_-_www.FesliyanStudios.com_David_Renda.mp3"
 
 [node name="GUI" parent="." instance=ExtResource( 4 )]
 mode = "SWIM"
@@ -35,18 +39,23 @@ position = Vector2( 66, 25 )
 
 [node name="Pipe" parent="Walls" instance=ExtResource( 5 )]
 position = Vector2( 600, -27 )
+color = "orange"
 
 [node name="Pipe2" parent="Walls" instance=ExtResource( 5 )]
 position = Vector2( 950, -109 )
+color = "yellow"
 
 [node name="Pipe3" parent="Walls" instance=ExtResource( 5 )]
 position = Vector2( 1300, 13 )
+color = "orange"
 
 [node name="Pipe4" parent="Walls" instance=ExtResource( 5 )]
 position = Vector2( 1650, -80 )
+color = "yellow"
 
 [node name="Pipe5" parent="Walls" instance=ExtResource( 5 )]
 position = Vector2( 2000, -80 )
+color = "green"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
@@ -76,5 +85,8 @@ position = Vector2( -750, 0 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera(flappy)/Reset"]
 position = Vector2( -203, 6 )
 shape = SubResource( 2 )
+
+[node name="Bubbles" parent="GameCamera(flappy)" instance=ExtResource( 8 )]
+position = Vector2( 1158, 49 )
 
 [connection signal="body_entered" from="GameCamera(flappy)/Reset" to="GameCamera(flappy)" method="_on_Reset_body_entered"]

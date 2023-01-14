@@ -1,7 +1,7 @@
 extends Camera2D
 
 export (NodePath) var player_node_path := ""
-export (String, FILE) var wall_filepath := "res://Scenes/Props/Pipes/Pipe-Red.tscn"
+export (String, FILE) var wall_filepath := "res://Scenes/Props/Pipes/Pipe.tscn"
 export (Array, int) var wall_spawn_range := [0,0]
 
 onready var player = get_node(player_node_path)
@@ -23,9 +23,12 @@ func _physics_process(delta):
 
 func _on_Reset_body_entered(body):
 	if body.is_in_group("Obstacles"):
+		var color = body.color
+		
 		var walls = body.get_parent()
 		
 		var instance = wallResource.instance()
+		instance.change_color(color)
 		walls.add_child(instance)
 		
 		random.randomize()
