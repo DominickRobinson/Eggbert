@@ -181,9 +181,9 @@ bbcode_enabled = true
 
 [node name="Control2" type="Control" parent="PausePanel/CenterContainer/VBoxContainer"]
 visible = false
-margin_top = 176.0
+margin_top = 166.0
 margin_right = 521.0
-margin_bottom = 176.0
+margin_bottom = 166.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PausePanel/CenterContainer/VBoxContainer"]
 margin_top = 176.0

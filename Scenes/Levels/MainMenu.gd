@@ -1,8 +1,5 @@
 extends Control
 
-export (String, FILE, "*.mp3") var music_filepath := ""
-export (float) var music_volume_db := -9.0
-
 onready var lb = $CanvasLayer/Leaderboard
 onready var cr =  $CanvasLayer/Credits
 

@@ -10,9 +10,15 @@ extends Node
 
 var current_track = ""
 
+var current_volume = 1.0
+
+export var audio_bus_name := "Master"
+onready var _bus := AudioServer.get_bus_index(audio_bus_name)
+
 onready var music_player = $MusicPlayer
 
-
+func _ready():
+	current_volume = db2linear(AudioServer.get_bus_volume_db(_bus))
 
 func play_track(track_name = "", vol = -10.0):
 	print("Play new song: " + track_name)
