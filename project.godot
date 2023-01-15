@@ -43,7 +43,7 @@ enabled=PoolStringArray( "res://addons/silent_wolf/plugin.cfg" )
 
 [global]
 
-"import etc"=false
+"import etc"=true
 compression=false
 
 [importer_defaults]

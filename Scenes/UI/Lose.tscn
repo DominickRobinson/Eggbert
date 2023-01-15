@@ -151,9 +151,9 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PausePanel/CenterContainer"]
 margin_left = 77.0
-margin_top = 23.0
+margin_top = 21.0
 margin_right = 598.0
-margin_bottom = 501.0
+margin_bottom = 503.0
 theme = ExtResource( 4 )
 custom_constants/separation = 10
 
@@ -241,28 +241,28 @@ text = "Submit Score to Leaderboard"
 [node name="ViewLeaderboard" type="Button" parent="PausePanel/CenterContainer/VBoxContainer"]
 margin_top = 295.0
 margin_right = 521.0
-margin_bottom = 338.0
+margin_bottom = 342.0
 text = "View Leaderboard"
 
 [node name="Space" type="Control" parent="PausePanel/CenterContainer/VBoxContainer"]
-margin_top = 348.0
+margin_top = 352.0
 margin_right = 521.0
-margin_bottom = 358.0
+margin_bottom = 362.0
 rect_min_size = Vector2( 35, 10 )
 
 [node name="Restart" type="Button" parent="PausePanel/CenterContainer/VBoxContainer"]
 use_parent_material = true
-margin_top = 368.0
+margin_top = 372.0
 margin_right = 521.0
-margin_bottom = 418.0
+margin_bottom = 422.0
 rect_min_size = Vector2( 0, 50 )
 text = "Restart"
 
 [node name="MainMenu" type="Button" parent="PausePanel/CenterContainer/VBoxContainer"]
 use_parent_material = true
-margin_top = 428.0
+margin_top = 432.0
 margin_right = 521.0
-margin_bottom = 478.0
+margin_bottom = 482.0
 rect_min_size = Vector2( 0, 50 )
 text = "Go to Main Menu"
 
