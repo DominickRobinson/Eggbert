@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Props/Pipes/Pipe.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Characters/Eggbert.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Characters/Eggbert(swim).gd" type="Script" id=7]
-[ext_resource path="res://Scenes/Particles/Bubbles.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Particles/BubblesCPU.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 511.5, 47.5 )
@@ -20,7 +20,7 @@ extents = Vector2( 45, 364 )
 
 [node name="Swim" type="Node2D"]
 script = ExtResource( 2 )
-music_filepath = "res://Assets/Music/2020-09-14_-_Tropical_Keys_-_www.FesliyanStudios.com_David_Renda.mp3"
+track = "swim"
 
 [node name="GUI" parent="." instance=ExtResource( 4 )]
 mode = "SWIM"
@@ -87,6 +87,6 @@ position = Vector2( -203, 6 )
 shape = SubResource( 2 )
 
 [node name="Bubbles" parent="GameCamera(flappy)" instance=ExtResource( 8 )]
-position = Vector2( 1158, 49 )
+position = Vector2( 1158, 41 )
 
 [connection signal="body_entered" from="GameCamera(flappy)/Reset" to="GameCamera(flappy)" method="_on_Reset_body_entered"]

@@ -23,7 +23,6 @@ scale_curve = SubResource( 3 )
 color = Color( 0, 0, 1, 1 )
 
 [node name="Sweat" type="Particles2D"]
-emitting = false
 amount = 3
 lifetime = 2.0
 local_coords = false

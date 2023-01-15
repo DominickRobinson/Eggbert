@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/glide.mp3-093805a9e05e0643d58b812e3eacad90.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/glide.mp3"
+dest_files=[ "res://.import/glide.mp3-093805a9e05e0643d58b812e3eacad90.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

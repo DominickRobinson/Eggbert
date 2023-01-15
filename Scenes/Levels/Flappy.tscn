@@ -6,12 +6,12 @@
 [ext_resource path="res://Scenes/Props/Pipes/Pipe.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Backgrounds/Background(flappy).tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Characters/Eggbert(flap).gd" type="Script" id=6]
-[ext_resource path="res://Scenes/Particles/Sweat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Particles/SweatCPU.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Levels/Level.gd" type="Script" id=8]
 
 [node name="Flappy" type="Node2D"]
 script = ExtResource( 8 )
-music_filepath = "res://Assets/Music/2020-10-19_-_Its_A_Good_Day_-_www.FesliyanStudios.com_Steve_Oxen.mp3"
+track = "flappy"
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
 mode = "FLAP"
@@ -42,4 +42,5 @@ script = ExtResource( 6 )
 
 [node name="Sweat" parent="Eggbert" instance=ExtResource( 7 )]
 show_behind_parent = true
-position = Vector2( 1, -19 )
+position = Vector2( -1, -19 )
+emitting = false

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/swim.mp3-57c813ef93958d338f38bb4c5c01efca.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/swim.mp3"
+dest_files=[ "res://.import/swim.mp3-57c813ef93958d338f38bb4c5c01efca.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

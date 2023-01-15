@@ -7,5 +7,8 @@ onready var submit_button = $PausePanel/CenterContainer/VBoxContainer/SubmitScor
 
 
 func _on_SubmitScore_pressed():
-	GameManager.upload_score()
-	submit_button.disabled = true
+	if GameManager.player_name != "":
+		GameManager.upload_score()
+		submit_button.disabled = true
+	else:
+		$PausePanel/CenterContainer/VBoxContainer/EnterName.play("enter_name")

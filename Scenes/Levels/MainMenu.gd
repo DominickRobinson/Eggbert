@@ -8,7 +8,7 @@ onready var cr =  $CanvasLayer/Credits
 
 func _ready():
 	lb.refresh_leaderboards()
-	GameManager.play_audio(music_filepath, music_volume_db)
+	MusicManager.play_track("title")
 
 func _on_Flappy_pressed():
 	get_tree().change_scene("res://Scenes/Levels/Flappy.tscn")

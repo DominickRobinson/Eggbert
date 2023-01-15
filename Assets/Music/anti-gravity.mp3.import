@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/anti-gravity.mp3-a9af5cbf0a84d5ab97d5e99d0e17b568.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/anti-gravity.mp3"
+dest_files=[ "res://.import/anti-gravity.mp3-a9af5cbf0a84d5ab97d5e99d0e17b568.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Props/Flake.png" type="Texture" id=1]
 
 [sub_resource type="Gradient" id=4]
-colors = PoolColorArray( 0.737255, 0.972549, 1, 1, 0.737255, 0.972549, 1, 0 )
+colors = PoolColorArray( 0.653135, 0.900794, 0.929688, 1, 1, 1, 1, 0 )
 
 [sub_resource type="GradientTexture" id=5]
 gradient = SubResource( 4 )

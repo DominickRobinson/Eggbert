@@ -2,13 +2,13 @@
 
 [ext_resource path="res://Scenes/Characters/GameCamera.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Particles/Snow.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Props/Pipes/Pipe.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Backgrounds/Background(glide).tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Characters/Eggbert.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Characters/Eggbert(glide).gd" type="Script" id=7]
 [ext_resource path="res://Scenes/Levels/Level.gd" type="Script" id=8]
 [ext_resource path="res://Assets/SoundEffects/woosh.mp3" type="AudioStream" id=9]
+[ext_resource path="res://Scenes/Particles/SnowCPU.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 511.5, 47.5 )
@@ -18,8 +18,7 @@ extents = Vector2( 45, 364 )
 
 [node name="Glide" type="Node2D"]
 script = ExtResource( 8 )
-music_filepath = "res://Assets/Music/2022-07-13_-_Overcome_-_www.FesliyanStudios.com.mp3"
-music_volume_db = -7.0
+track = "glide"
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
 mode = "GLIDE"
@@ -49,8 +48,8 @@ position = Vector2( -750, 0 )
 position = Vector2( -200, 1 )
 shape = SubResource( 2 )
 
-[node name="Snow" parent="GameCamera(glide)" instance=ExtResource( 3 )]
-position = Vector2( 393, -332 )
+[node name="Snow" parent="GameCamera(glide)" instance=ExtResource( 10 )]
+position = Vector2( 394, -331 )
 
 [node name="Background(glide)" parent="." instance=ExtResource( 5 )]
 

@@ -39,7 +39,7 @@ func start():
 
 func set_score(value):
 	print(value)
-	score.bbcode_text = "[center][rainbow]" + str(value)
+	score.bbcode_text = "[rainbow]" + str(value)
 
 func lose(value):
 	$Buttons.visible = false

@@ -1,4 +1,4 @@
-extends Particles2D
+extends CPUParticles2D
 
 export var activation_dist := 40000
 

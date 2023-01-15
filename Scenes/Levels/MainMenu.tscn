@@ -61,9 +61,9 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
 margin_left = 62.0
-margin_top = 22.0
+margin_top = 15.0
 margin_right = 962.0
-margin_bottom = 577.0
+margin_bottom = 584.0
 
 [node name="Title" type="RichTextLabel" parent="CanvasLayer/CenterContainer/VBoxContainer"]
 margin_right = 900.0
@@ -85,11 +85,11 @@ rect_min_size = Vector2( 0, 25 )
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer"]
 margin_top = 237.0
 margin_right = 900.0
-margin_bottom = 555.0
+margin_bottom = 569.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer"]
 margin_right = 500.0
-margin_bottom = 318.0
+margin_bottom = 332.0
 rect_min_size = Vector2( 500, 0 )
 theme = ExtResource( 6 )
 custom_constants/separation = 10
@@ -107,42 +107,42 @@ fit_content_height = true
 
 [node name="Flappy" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_right = 500.0
-margin_bottom = 45.0
+margin_bottom = 47.0
 rect_min_size = Vector2( 0, 45 )
 text = "Flappy"
 
 [node name="Glide" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 55.0
+margin_top = 57.0
 margin_right = 500.0
-margin_bottom = 100.0
+margin_bottom = 104.0
 rect_min_size = Vector2( 0, 45 )
 text = "Glide"
 
 [node name="Swim" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 110.0
+margin_top = 114.0
 margin_right = 500.0
-margin_bottom = 155.0
+margin_bottom = 161.0
 rect_min_size = Vector2( 0, 45 )
 text = "Swim"
 
 [node name="Anti-gravity" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 165.0
+margin_top = 171.0
 margin_right = 500.0
-margin_bottom = 210.0
+margin_bottom = 218.0
 rect_min_size = Vector2( 0, 45 )
 text = "Anti-Gravity"
 
 [node name="Leaderboards" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 220.0
+margin_top = 228.0
 margin_right = 500.0
-margin_bottom = 265.0
+margin_bottom = 275.0
 rect_min_size = Vector2( 0, 45 )
 text = "Leaderboards"
 
 [node name="Credits" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 275.0
+margin_top = 285.0
 margin_right = 500.0
-margin_bottom = 318.0
+margin_bottom = 332.0
 text = "Credits"
 
 [node name="Quit" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
@@ -153,12 +153,12 @@ margin_bottom = 384.0
 text = "Quit"
 
 [node name="Version" type="Label" parent="CanvasLayer"]
-margin_left = 910.0
-margin_top = 570.0
-margin_right = 1015.0
-margin_bottom = 592.0
+margin_left = 782.0
+margin_top = 569.0
+margin_right = 1011.0
+margin_bottom = 591.0
 custom_fonts/font = ExtResource( 9 )
-text = "Version 0.9"
+text = "Version 0.9 (music fix)"
 __meta__ = {
 "_edit_use_anchors_": false
 }

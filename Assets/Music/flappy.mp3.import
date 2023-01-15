@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/flappy.mp3-98cc9963728e93245209cc94509c18c8.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/flappy.mp3"
+dest_files=[ "res://.import/flappy.mp3-98cc9963728e93245209cc94509c18c8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

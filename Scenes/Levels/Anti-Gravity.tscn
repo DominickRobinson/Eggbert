@@ -11,7 +11,7 @@
 
 [node name="Anti-Gravity" type="Node2D"]
 script = ExtResource( 5 )
-music_filepath = "res://Assets/Music/2020-10-20_-_Flying_High_-_www.FesliyanStudios.com_Steve_Oxen.mp3"
+track = "anti-gravity"
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
 mode = "ANTI-GRAVITY"

@@ -15,7 +15,7 @@ func _ready():
 func change_color(c):
 	self.color = c
 	var file = filepath % color
-	print(file)
+#	print(file)
 	$Lower/Sprite.texture = load(file)
 	$Upper/Sprite.texture = load(file)
 
@@ -26,10 +26,10 @@ func _on_Sensor_area_entered(area):
 
 
 
-func _on_Sensor_body_entered(body):
-	print("point!!!")
-	if body.is_in_group("Players"):
-		if body.alive:
-			GameManager.increment_score()
-		else:
-			body.die()
+#func _on_Sensor_body_entered(body):
+#	#print("point!!!")
+#	if body.is_in_group("Players"):
+#		if body.alive:
+#			GameManager.increment_score()
+#		else:
+#			body.die()
