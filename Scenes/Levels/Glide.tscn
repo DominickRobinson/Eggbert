@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Scenes/Characters/GameCamera.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Particles/WindCPU.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Props/Pipes/Pipe.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Backgrounds/Background(glide).tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Characters/Eggbert.tscn" type="PackedScene" id=6]
@@ -10,6 +9,7 @@
 [ext_resource path="res://Scenes/Levels/Level.gd" type="Script" id=8]
 [ext_resource path="res://Assets/SoundEffects/woosh.mp3" type="AudioStream" id=9]
 [ext_resource path="res://Scenes/Particles/SnowCPU.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Backgrounds/Mountains/mountain-side.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 511.5, 47.5 )
@@ -78,16 +78,16 @@ position = Vector2( 2000, -80 )
 color = "ice_blue"
 
 [node name="Eggbert" parent="." instance=ExtResource( 6 )]
+position = Vector2( -34, -152 )
+rotation = 1.48679
 script = ExtResource( 7 )
-
-[node name="Wind" parent="Eggbert/Body" index="6" instance=ExtResource( 3 )]
-scale = Vector2( 1, 1 )
-z_index = -1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Eggbert"]
 stream = ExtResource( 9 )
 volume_db = 10.0
 
-[connection signal="body_entered" from="GameCamera(glide)/Reset" to="GameCamera(glide)" method="_on_Reset_body_entered"]
+[node name="Mountain-side" type="Sprite" parent="."]
+position = Vector2( -7, 101 )
+texture = ExtResource( 11 )
 
-[editable path="Eggbert"]
+[connection signal="body_entered" from="GameCamera(glide)/Reset" to="GameCamera(glide)" method="_on_Reset_body_entered"]

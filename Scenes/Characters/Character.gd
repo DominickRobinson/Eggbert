@@ -24,17 +24,15 @@ var mee_path = "res://Assets/SoundEffects/mee.mp3"
 var mo_path = "res://Assets/SoundEffects/mo.mp3"
 
 var time_to_die = 4.0
+var started = false
 
 func _init():
 	GameManager.score = 0
 	GameManager.connect("point", self, "_on_point")
 	
 	yield(self, "ready")
-	if is_instance_valid($Detect):
-		$Detect.connect("body_entered", self, "_on_obstacle_collision")
-	if is_instance_valid($AnimationPlayer):
-		$AnimationPlayer.connect("animation_finished", self, "_on_AnimationPlayer_animation_finished")
-
+	detect.connect("body_entered", self, "_on_obstacle_collision")
+	anim.connect("animation_finished", self, "_on_animation_finished")
 
 func _physics_process(delta):
 	if not alive:
@@ -48,9 +46,8 @@ func die(time=time_to_die):
 	anim.play("death")
 	motion.y = DEATH_MOTION_Y
 	motion.x = -HORIZONTAL_SPEED
-	$Detect.collision_layer = 0
-	$Detect.collision_mask = 0
-#	GameManager.play_audio("res://Assets/SoundEffects/ow.mp3", 10)
+	detect.collision_layer = 0
+	detect.collision_mask = 0
 	lose_popup(time)
 
 
@@ -91,7 +88,8 @@ func speak(text, time, type):
 	bubble.prepare(text, time)
 
 
-
+func _on_animation_finished(anim_name):
+	anim.play("RESET")
 
 
 #func add_shaders():

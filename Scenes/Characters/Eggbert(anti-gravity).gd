@@ -41,7 +41,8 @@ func die(time=4.5):
 	explode()
 
 
-func _on_AnimationPlayer_animation_finished(anim_name):
+func _on_animation_finished(anim_name):
+	._on_animation_finished(anim_name)
 	match anim_name:
 		"flap":
 			anim.play("idle")

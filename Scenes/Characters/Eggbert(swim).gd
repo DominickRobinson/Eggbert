@@ -64,7 +64,7 @@ func _on_point():
 	HORIZONTAL_SPEED *= 1.02
 	SWIM_SPEED *= 1.02
 
-func _on_AnimationPlayer_animation_changed(old_name, new_name):
+func _on_animation_changed(old_name, new_name):
 	if new_name == "swim":
 		anim.playback_speed = float_playback_speed
 	else:

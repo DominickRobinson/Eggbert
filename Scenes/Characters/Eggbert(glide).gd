@@ -14,9 +14,16 @@ const MAX_ROTATION = PI/2.5
 func _ready():
 	GameManager.mode = GameManager.GameModes.GLIDE
 	motion.x = HORIZONTAL_SPEED
+	
+	yield(self, "ready")
+	anim.play("wave")
+	speak("let's get this bread", 2, "normal")
+	yield(get_tree().create_timer(2), "timeout")
 	anim.play("glide")
 
 func _physics_process(delta):
+	if not started:
+		return
 	glide_rotation = clamp(glide_rotation, -MAX_ROTATION, MAX_ROTATION)
 	if Input.is_action_pressed("glide") or $Touch/Button.pressed:
 		glide()
@@ -57,6 +64,12 @@ func _on_point():
 	ANGULAR_GRAVITY *= 1.02
 	GLIDE *= 1.02
 
+
+func _on_animation_finished(anim_name):
+	match anim_name:
+		"start_glide":
+			started = true
+			anim.play("glide")
 
 
 

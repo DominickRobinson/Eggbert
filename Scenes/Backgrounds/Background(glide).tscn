@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Props/cool-sun.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Backgrounds/Sun.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Backgrounds/Mountains/Sky.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Backgrounds/Mountains/Clouds .png" type="Texture" id=6]
+[ext_resource path="res://Assets/Backgrounds/Mountains/Clouds.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Backgrounds/Plains/Mountains_.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Backgrounds/Clouds.gd" type="Script" id=8]
 

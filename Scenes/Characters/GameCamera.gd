@@ -13,6 +13,7 @@ var random = RandomNumberGenerator.new()
 func _ready():
 	starting_y = global_position.y
 	wallResource = load(wall_filepath)
+	limit_left = global_position.x - 512
 
 func _physics_process(delta):
 	if is_instance_valid(player):
