@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Assets/Backgrounds/Plains/Grass 3 lines.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Backgrounds/ParallaxEnvironment.gd" type="Script" id=2]
@@ -18,6 +18,9 @@
 [ext_resource path="res://Assets/Backgrounds/Plains/Wheat right.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Backgrounds/Plains/Forest_.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Props/cool-sun.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Props/Leaves/pine.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Props/Leaves/spiky.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Props/Leaves/leaf.png" type="Texture" id=21]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -160,8 +163,8 @@ tracks/1/keys = {
 [sub_resource type="ShaderMaterial" id=8]
 shader = ExtResource( 9 )
 shader_param/speed = 1.0
-shader_param/minStrength = 0.05
-shader_param/maxStrength = 0.01
+shader_param/minStrength = 0.03
+shader_param/maxStrength = 0.05
 shader_param/strengthScale = 750.0
 shader_param/interval = 8.0
 shader_param/detail = 1.0
@@ -376,13 +379,80 @@ position = Vector2( 448, 10 )
 scale = Vector2( 2, 1 )
 texture = ExtResource( 7 )
 
+[node name="Leaves" type="CPUParticles2D" parent="Background/Trees/Tree"]
+position = Vector2( -86.5, 63 )
+lifetime = 10.0
+explosiveness = 0.1
+randomness = 0.4
+texture = ExtResource( 19 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector2( 0, 1 )
+spread = 82.25
+gravity = Vector2( 0, 30 )
+initial_velocity = 10.0
+angular_velocity = -100.0
+angular_velocity_random = 0.25
+orbit_velocity = -0.06
+orbit_velocity_random = 0.12
+radial_accel = 1.0
+damping = 0.1
+scale_amount = 0.2
+
 [node name="Tree2" type="Sprite" parent="Background/Trees"]
 material = SubResource( 8 )
+position = Vector2( -165, 105 )
 texture = ExtResource( 13 )
+offset = Vector2( 165, -105 )
+
+[node name="Leaves2" type="CPUParticles2D" parent="Background/Trees/Tree2"]
+position = Vector2( -292, -32 )
+scale = Vector2( 2, 1 )
+amount = 11
+lifetime = 10.0
+explosiveness = 0.1
+randomness = 0.4
+texture = ExtResource( 20 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector2( 0, 1 )
+spread = 82.25
+gravity = Vector2( 0, 20 )
+initial_velocity = 10.0
+angular_velocity = -100.0
+angular_velocity_random = 0.25
+orbit_velocity = -0.06
+orbit_velocity_random = 0.12
+radial_accel = 1.0
+damping = 0.1
+scale_amount = 0.2
 
 [node name="Tree3" type="Sprite" parent="Background/Trees"]
 material = SubResource( 8 )
 texture = ExtResource( 12 )
+
+[node name="Leaves3" type="CPUParticles2D" parent="Background/Trees/Tree3"]
+position = Vector2( -193, 88 )
+scale = Vector2( 2, 1 )
+amount = 15
+lifetime = 20.0
+explosiveness = 0.1
+randomness = 0.4
+texture = ExtResource( 21 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector2( 0, 1 )
+spread = 82.25
+gravity = Vector2( 0, 15 )
+initial_velocity = 10.0
+angular_velocity = -100.0
+angular_velocity_random = 0.25
+linear_accel = 1.0
+linear_accel_random = 0.26
+radial_accel = 1.0
+tangential_accel = 17.0
+tangential_accel_random = 0.37
+scale_amount = 0.2
 
 [node name="SkyAnimator" type="AnimationPlayer" parent="Background"]
 root_node = NodePath("../Sky")

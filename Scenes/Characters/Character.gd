@@ -46,7 +46,7 @@ func die():
 	lose_popup()
 	$Detect.collision_layer = 0
 	$Detect.collision_mask = 0
-	GameManager.play_audio("res://Assets/SoundEffects/ow.mp3", 15)
+	GameManager.play_audio("res://Assets/SoundEffects/ow.mp3", 10)
 
 
 func lose_popup():

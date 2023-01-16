@@ -9,7 +9,6 @@
 [node name="Credits" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 150, 94 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -19,7 +18,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1024, 600 )
-color = Color( 0.419608, 0.419608, 0.419608, 0.247059 )
+color = Color( 0, 0, 0, 0.792157 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
