@@ -5,12 +5,20 @@ onready var timer = $Timer
 
 var tween = Tween.new()
 
+var done = false
+
+
 func _ready():
 	scale = Vector2(0, 0)
 
 func _physics_process(delta):
 	global_rotation = 0
-	scale = lerp(scale, Vector2(1,1), .07)
+	if not done:
+		scale = lerp(scale, Vector2(1,1), 0.07)
+	else:
+		scale = lerp(scale, Vector2(0,0), 0.13)
+		if scale.length() < .1:
+			queue_free()
 
 
 func prepare(text, time):
@@ -23,4 +31,4 @@ func set_text(text):
 func set_timer(time):
 	timer.start(time)
 	yield(timer, "timeout")
-	queue_free()
+	done = true

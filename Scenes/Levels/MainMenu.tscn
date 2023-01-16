@@ -41,11 +41,8 @@ layer = -1
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2( 293.471, 171.195 )
-
-[node name="Eggbert" parent="Node2D" instance=ExtResource( 3 )]
-position = Vector2( -2.52901, -2.67834 )
+[node name="Eggbert" parent="." instance=ExtResource( 3 )]
+position = Vector2( 145.469, 170.602 )
 script = ExtResource( 7 )
 HORIZONTAL_SPEED = 0
 GRAVITY = 0
@@ -159,7 +156,7 @@ margin_top = 569.0
 margin_right = 1013.0
 margin_bottom = 591.0
 custom_fonts/font = ExtResource( 9 )
-text = "Version 0.9 (more particles!!)"
+text = "Version 0.9 (speech bubbles, particles)"
 align = 2
 valign = 1
 __meta__ = {

@@ -40,7 +40,7 @@ func swim():
 		anim.playback_speed = float_playback_speed
 
 func die(time=time_to_die):
-	.die()
+	.die(time)
 	
 	$Swishing.stop()
 	
@@ -54,7 +54,7 @@ func die(time=time_to_die):
 	mask.scale.y *= $Body.scale.y * 1.2
 	mask.global_position = $Body/Head.global_position
 
-	speak("*gargles*", 2, "yell")
+	speak("*gargles*", 3, "yell")
 	GameManager.play_audio("res://Assets/SoundEffects/gargle.mp3", 15)
 	$Body/Head/Beak/Bubbles.emitting = true
 

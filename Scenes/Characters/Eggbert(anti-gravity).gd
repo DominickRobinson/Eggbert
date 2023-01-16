@@ -1,7 +1,7 @@
 extends Character
 
 export var FLIGHT_ANGLE_DEGREES := 35
-var FLIGHT_ANGLE = deg2rad(FLIGHT_ANGLE_DEGREES)
+var FLIGHT_ANGLE = -deg2rad(FLIGHT_ANGLE_DEGREES)
 
 var flap = false
 
@@ -31,13 +31,13 @@ func flap():
 	rotation = FLIGHT_ANGLE
 	GameManager.play_audio("res://Assets/SoundEffects/zoom.mp3", 10)
 
-func die(time=time_to_die):
+func die(time=4.5):
 	speak("Uh oh . . .", 2, "yell")
 	.die(time)
 
-	GameManager.play_audio("res://Assets/SoundEffects/meemo_meemo.mp3", 15)
+	GameManager.play_audio("res://Assets/SoundEffects/meemo_meemo.mp3", 10)
 
-	yield(get_tree().create_timer(2.0), "timeout")
+	yield(get_tree().create_timer(2.5), "timeout")
 	explode()
 
 

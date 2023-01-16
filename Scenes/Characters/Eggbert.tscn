@@ -3132,7 +3132,7 @@ tracks/38/keys = {
 "values": [ 1, 2 ]
 }
 tracks/39/type = "value"
-tracks/39/path = NodePath(".:rotation_degrees")
+tracks/39/path = NodePath(".:collision_layer")
 tracks/39/interp = 1
 tracks/39/loop_wrap = true
 tracks/39/imported = false
@@ -3141,10 +3141,10 @@ tracks/39/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ 1 ]
 }
 tracks/40/type = "value"
-tracks/40/path = NodePath(".:position")
+tracks/40/path = NodePath(".:collision_mask")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/imported = false
@@ -3153,39 +3153,15 @@ tracks/40/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ 1 ]
 }
 tracks/41/type = "value"
-tracks/41/path = NodePath(".:collision_layer")
+tracks/41/path = NodePath("Body:frame")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/imported = false
 tracks/41/enabled = true
 tracks/41/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1 ]
-}
-tracks/42/type = "value"
-tracks/42/path = NodePath(".:collision_mask")
-tracks/42/interp = 1
-tracks/42/loop_wrap = true
-tracks/42/imported = false
-tracks/42/enabled = true
-tracks/42/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1 ]
-}
-tracks/43/type = "value"
-tracks/43/path = NodePath("Body:frame")
-tracks/43/interp = 1
-tracks/43/loop_wrap = true
-tracks/43/imported = false
-tracks/43/enabled = true
-tracks/43/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,

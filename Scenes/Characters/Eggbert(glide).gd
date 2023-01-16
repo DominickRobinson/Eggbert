@@ -44,11 +44,11 @@ func glide():
 	glide_rotation -= GLIDE
 
 func die(time=2.5):
-	.die()
+	.die(time)
 	anim.playback_speed = 1.0
 #	$Body/Wind.one_shot = true
 	$Body/Wind.queue_free()
-	speak("NOOOO!!", 2, "yell")
+	speak("NOOOO!!", 3, "yell")
 	GameManager.play_audio("res://Assets/SoundEffects/mo_mo.mp3", 15)
 
 
