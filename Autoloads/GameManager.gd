@@ -22,6 +22,10 @@ var score = 0
 
 func _ready():
 	GUI = get_GUI()
+	Input.action_press("a")
+	Input.action_press("a")
+	Input.action_press("a")
+	Input.action_press("a")
 
 func _unhandled_key_input(event):
 	if Input.is_action_just_pressed("quit"):
