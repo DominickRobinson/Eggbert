@@ -32,7 +32,10 @@ func _init():
 	
 	yield(self, "ready")
 	detect.connect("body_entered", self, "_on_obstacle_collision")
+
+	anim.connect("animation_started", self, "_on_animation_started")
 	anim.connect("animation_finished", self, "_on_animation_finished")
+	anim.connect("animation_changed", self, "_on_animation_changed")
 
 func _physics_process(delta):
 	if not alive:
@@ -88,8 +91,24 @@ func speak(text, time, type):
 	bubble.prepare(text, time)
 
 
-func _on_animation_finished(anim_name):
+func _on_animation_started(anim_name):
+	if anim_name == "RESET":
+		return
+	print("RESET")
+	
 	anim.play("RESET")
+	anim.disconnect("animation_started", self, "_on_animation_started")
+	yield(anim, "animation_finished")
+	print(anim_name)
+	anim.play(anim_name)
+	anim.connect("animation_started", self, "_on_animation_started")
+
+
+func _on_animation_finished(anim_name):
+	pass
+
+func _on_animation_changed(old_anim_name, new_anim_name):
+	pass
 
 
 #func add_shaders():

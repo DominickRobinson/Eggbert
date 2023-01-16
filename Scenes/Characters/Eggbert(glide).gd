@@ -3,6 +3,9 @@ extends Character
 export var GLIDE := .06
 export var ANGULAR_GRAVITY := .03
 
+const windResource = preload("res://Scenes/Particles/WindCPU.tscn")
+onready var wind
+
 var glide_rotation = 0
 
 #onready var audio = $AudioStreamPlayer
@@ -20,6 +23,11 @@ func _ready():
 	speak("let's get this bread", 2, "normal")
 	yield(get_tree().create_timer(2), "timeout")
 	anim.play("glide")
+	started = true
+	
+	wind = windResource.instance()
+	add_child(wind)
+
 
 func _physics_process(delta):
 	if not started:
@@ -40,21 +48,20 @@ func _physics_process(delta):
 		glide_rotation += ANGULAR_GRAVITY
 		motion = Vector2(1,0).rotated(glide_rotation) * HORIZONTAL_SPEED
 		motion = move_and_slide(motion, UP)
-		rotation = glide_rotation
+		rotation = glide_rotation + PI/2
 
 
 
 func glide():
 	if not alive:
 		return
-	anim = anim as AnimationPlayer
 	glide_rotation -= GLIDE
 
 func die(time=2.5):
 	.die(time)
 	anim.playback_speed = 1.0
 #	$Body/Wind.one_shot = true
-	$Body/Wind.queue_free()
+	wind.queue_free()
 	speak("NOOOO!!", 3, "yell")
 	GameManager.play_audio("res://Assets/SoundEffects/mo_mo.mp3", 15)
 
@@ -66,10 +73,7 @@ func _on_point():
 
 
 func _on_animation_finished(anim_name):
-	match anim_name:
-		"start_glide":
-			started = true
-			anim.play("glide")
+	pass
 
 
 

@@ -39,9 +39,10 @@ func die(time=1.5):
 
 
 func _on_animation_finished(anim_name):
+	._on_animation_finished(anim_name)
 	match anim_name:
 		"flap":
-			anim.play("idle")
+			anim.play("flap_idle")
 
 
 func _on_point():
