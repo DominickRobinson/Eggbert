@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Props/wind-particle.png" type="Texture" id=1]
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0.00721154, 0.996059 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.131194 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.296196, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.156863, 1, 1, 1, 0 )
+
+[node name="Water" type="CPUParticles2D"]
+show_behind_parent = true
+position = Vector2( -540, -40 )
+amount = 50
+lifetime = 2.0
+local_coords = false
+texture = ExtResource( 1 )
+gravity = Vector2( 0, 0 )
+scale_amount_random = 0.2
+scale_amount_curve = SubResource( 2 )
+color = Color( 0.768627, 0.960784, 1, 1 )
+color_ramp = SubResource( 1 )

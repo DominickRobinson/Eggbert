@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/gargle.mp3-17d3c80079f3868700273febecd57c1f.mp3str"
+
+[deps]
+
+source_file="res://Assets/SoundEffects/gargle.mp3"
+dest_files=[ "res://.import/gargle.mp3-17d3c80079f3868700273febecd57c1f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

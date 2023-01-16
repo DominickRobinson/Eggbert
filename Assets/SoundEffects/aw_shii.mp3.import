@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/aw_shii.mp3-eac658a3aa99ebf214f8cef5988c7f02.mp3str"
+
+[deps]
+
+source_file="res://Assets/SoundEffects/aw_shii.mp3"
+dest_files=[ "res://.import/aw_shii.mp3-eac658a3aa99ebf214f8cef5988c7f02.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

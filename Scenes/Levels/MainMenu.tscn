@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Backgrounds/Background(flappy).tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Levels/MainMenu.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/UI/Leaderboard.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Themes/FontVerySmall.tres" type="DynamicFont" id=9]
 [ext_resource path="res://Scenes/UI/Credits.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Levels/MenuButtons.gd" type="Script" id=12]
 
 [sub_resource type="DynamicFont" id=3]
 size = 75
@@ -41,7 +42,7 @@ layer = -1
 current = true
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2( 250, 174 )
+position = Vector2( 293.471, 171.195 )
 
 [node name="Eggbert" parent="Node2D" instance=ExtResource( 3 )]
 position = Vector2( -2.52901, -2.67834 )
@@ -86,14 +87,15 @@ margin_top = 237.0
 margin_right = 900.0
 margin_bottom = 569.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="MenuButtons" type="VBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer"]
 margin_right = 500.0
 margin_bottom = 332.0
 rect_min_size = Vector2( 500, 0 )
 theme = ExtResource( 6 )
 custom_constants/separation = 10
+script = ExtResource( 12 )
 
-[node name="GameModes" type="RichTextLabel" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="GameModes" type="RichTextLabel" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons"]
 visible = false
 margin_right = 500.0
 margin_bottom = 60.0
@@ -104,47 +106,47 @@ bbcode_text = "[center]Game Modes"
 text = "Game Modes"
 fit_content_height = true
 
-[node name="Flappy" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Flappy" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons"]
 margin_right = 500.0
 margin_bottom = 47.0
 rect_min_size = Vector2( 0, 45 )
 text = "Flappy"
 
-[node name="Glide" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Glide" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons"]
 margin_top = 57.0
 margin_right = 500.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 0, 45 )
 text = "Glide"
 
-[node name="Swim" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Swim" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons"]
 margin_top = 114.0
 margin_right = 500.0
 margin_bottom = 161.0
 rect_min_size = Vector2( 0, 45 )
 text = "Swim"
 
-[node name="Anti-gravity" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Anti-gravity" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons"]
 margin_top = 171.0
 margin_right = 500.0
 margin_bottom = 218.0
 rect_min_size = Vector2( 0, 45 )
 text = "Anti-Gravity"
 
-[node name="Leaderboards" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Leaderboards" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons"]
 margin_top = 228.0
 margin_right = 500.0
 margin_bottom = 275.0
 rect_min_size = Vector2( 0, 45 )
 text = "Leaderboards"
 
-[node name="Credits" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Credits" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons"]
 margin_top = 285.0
 margin_right = 500.0
 margin_bottom = 332.0
 text = "Credits"
 
-[node name="Quit" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons"]
 visible = false
 margin_top = 345.0
 margin_right = 500.0
@@ -157,7 +159,7 @@ margin_top = 569.0
 margin_right = 1013.0
 margin_bottom = 591.0
 custom_fonts/font = ExtResource( 9 )
-text = "Version 0.8.9 (auto-start audio)"
+text = "Version 0.9 (more particles!!)"
 align = 2
 valign = 1
 __meta__ = {
@@ -170,12 +172,12 @@ visible = false
 [node name="Credits" parent="CanvasLayer" instance=ExtResource( 10 )]
 visible = false
 
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Flappy" to="." method="_on_Flappy_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Glide" to="." method="_on_Glide_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Swim" to="." method="_on_Float_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Anti-gravity" to="." method="_on_Antigravity_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Leaderboards" to="." method="_on_Leaderboards_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons/Flappy" to="." method="_on_Flappy_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons/Glide" to="." method="_on_Glide_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons/Swim" to="." method="_on_Float_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons/Anti-gravity" to="." method="_on_Antigravity_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons/Leaderboards" to="." method="_on_Leaderboards_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons/Quit" to="." method="_on_Quit_pressed"]
 
 [editable path="Background"]

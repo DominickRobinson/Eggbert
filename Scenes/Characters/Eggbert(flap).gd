@@ -30,6 +30,10 @@ func flap():
 	anim.play("flap")
 	mee_moo()
 
+func die(time=time_to_die):
+	.die()
+	speak("OOWWWW!!", 2, "yell")
+	GameManager.play_audio("res://Assets/SoundEffects/ow.mp3", 10)
 
 
 

@@ -369,6 +369,175 @@ motion_mirroring = Vector2( 1024, 0 )
 [node name="Sprite" type="Sprite" parent="Background/Forest"]
 texture = ExtResource( 17 )
 
+[node name="Trees2" type="ParallaxLayer" parent="Background"]
+modulate = Color( 0.694118, 0.694118, 0.694118, 1 )
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 1200, 0 )
+
+[node name="Tree" type="Sprite" parent="Background/Trees2"]
+material = SubResource( 8 )
+position = Vector2( 100, 10 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 7 )
+
+[node name="Leaves" type="CPUParticles2D" parent="Background/Trees2/Tree"]
+position = Vector2( -86.5, 63 )
+lifetime = 10.0
+explosiveness = 0.1
+randomness = 0.4
+texture = ExtResource( 19 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector2( 0, 1 )
+spread = 82.25
+gravity = Vector2( 0, 30 )
+initial_velocity = 10.0
+angular_velocity = -100.0
+angular_velocity_random = 0.25
+orbit_velocity = -0.06
+orbit_velocity_random = 0.12
+radial_accel = 1.0
+damping = 0.1
+scale_amount = 0.2
+
+[node name="Tree2" type="Sprite" parent="Background/Trees2"]
+material = SubResource( 8 )
+position = Vector2( 500, 105 )
+texture = ExtResource( 13 )
+offset = Vector2( 165, -105 )
+
+[node name="Leaves2" type="CPUParticles2D" parent="Background/Trees2/Tree2"]
+position = Vector2( -292, -32 )
+scale = Vector2( 2, 1 )
+amount = 11
+lifetime = 10.0
+explosiveness = 0.1
+randomness = 0.4
+texture = ExtResource( 20 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector2( 0, 1 )
+spread = 82.25
+gravity = Vector2( 0, 20 )
+initial_velocity = 10.0
+angular_velocity = -100.0
+angular_velocity_random = 0.25
+orbit_velocity = -0.06
+orbit_velocity_random = 0.12
+radial_accel = 1.0
+damping = 0.1
+scale_amount = 0.2
+
+[node name="Tree3" type="Sprite" parent="Background/Trees2"]
+material = SubResource( 8 )
+position = Vector2( -145, 0 )
+texture = ExtResource( 12 )
+
+[node name="Leaves3" type="CPUParticles2D" parent="Background/Trees2/Tree3"]
+position = Vector2( -193, 88 )
+scale = Vector2( 2, 1 )
+amount = 15
+lifetime = 20.0
+explosiveness = 0.1
+randomness = 0.4
+texture = ExtResource( 21 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector2( 0, 1 )
+spread = 82.25
+gravity = Vector2( 0, 15 )
+initial_velocity = 10.0
+angular_velocity = -100.0
+angular_velocity_random = 0.25
+linear_accel = 1.0
+linear_accel_random = 0.26
+radial_accel = 1.0
+tangential_accel = 17.0
+tangential_accel_random = 0.37
+scale_amount = 0.2
+
+[node name="Tree4" type="Sprite" parent="Background/Trees2"]
+material = SubResource( 8 )
+position = Vector2( 714, 25 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 7 )
+
+[node name="Leaves" type="CPUParticles2D" parent="Background/Trees2/Tree4"]
+position = Vector2( -86.5, 63 )
+lifetime = 10.0
+explosiveness = 0.1
+randomness = 0.4
+texture = ExtResource( 19 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector2( 0, 1 )
+spread = 82.25
+gravity = Vector2( 0, 30 )
+initial_velocity = 10.0
+angular_velocity = -100.0
+angular_velocity_random = 0.25
+orbit_velocity = -0.06
+orbit_velocity_random = 0.12
+radial_accel = 1.0
+damping = 0.1
+scale_amount = 0.2
+
+[node name="Tree5" type="Sprite" parent="Background/Trees2"]
+material = SubResource( 8 )
+position = Vector2( 112, 129 )
+texture = ExtResource( 13 )
+offset = Vector2( 165, -105 )
+
+[node name="Leaves2" type="CPUParticles2D" parent="Background/Trees2/Tree5"]
+position = Vector2( -292, -32 )
+scale = Vector2( 2, 1 )
+amount = 11
+lifetime = 10.0
+explosiveness = 0.1
+randomness = 0.4
+texture = ExtResource( 20 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector2( 0, 1 )
+spread = 82.25
+gravity = Vector2( 0, 20 )
+initial_velocity = 10.0
+angular_velocity = -100.0
+angular_velocity_random = 0.25
+orbit_velocity = -0.06
+orbit_velocity_random = 0.12
+radial_accel = 1.0
+damping = 0.1
+scale_amount = 0.2
+
+[node name="Tree6" type="Sprite" parent="Background/Trees2"]
+material = SubResource( 8 )
+position = Vector2( 622, 23 )
+texture = ExtResource( 12 )
+
+[node name="Leaves3" type="CPUParticles2D" parent="Background/Trees2/Tree6"]
+position = Vector2( -193, 88 )
+scale = Vector2( 2, 1 )
+amount = 15
+lifetime = 20.0
+explosiveness = 0.1
+randomness = 0.4
+texture = ExtResource( 21 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector2( 0, 1 )
+spread = 82.25
+gravity = Vector2( 0, 15 )
+initial_velocity = 10.0
+angular_velocity = -100.0
+angular_velocity_random = 0.25
+linear_accel = 1.0
+linear_accel_random = 0.26
+radial_accel = 1.0
+tangential_accel = 17.0
+tangential_accel_random = 0.37
+scale_amount = 0.2
+
 [node name="Trees" type="ParallaxLayer" parent="Background"]
 motion_scale = Vector2( 0.7, 1 )
 motion_mirroring = Vector2( 1200, 0 )
@@ -401,7 +570,7 @@ scale_amount = 0.2
 
 [node name="Tree2" type="Sprite" parent="Background/Trees"]
 material = SubResource( 8 )
-position = Vector2( -165, 105 )
+position = Vector2( -186, 152 )
 texture = ExtResource( 13 )
 offset = Vector2( 165, -105 )
 
@@ -432,6 +601,88 @@ material = SubResource( 8 )
 texture = ExtResource( 12 )
 
 [node name="Leaves3" type="CPUParticles2D" parent="Background/Trees/Tree3"]
+position = Vector2( -193, 88 )
+scale = Vector2( 2, 1 )
+amount = 15
+lifetime = 20.0
+explosiveness = 0.1
+randomness = 0.4
+texture = ExtResource( 21 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector2( 0, 1 )
+spread = 82.25
+gravity = Vector2( 0, 15 )
+initial_velocity = 10.0
+angular_velocity = -100.0
+angular_velocity_random = 0.25
+linear_accel = 1.0
+linear_accel_random = 0.26
+radial_accel = 1.0
+tangential_accel = 17.0
+tangential_accel_random = 0.37
+scale_amount = 0.2
+
+[node name="Tree4" type="Sprite" parent="Background/Trees"]
+material = SubResource( 8 )
+position = Vector2( -138, 9 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 7 )
+
+[node name="Leaves" type="CPUParticles2D" parent="Background/Trees/Tree4"]
+position = Vector2( -86.5, 63 )
+lifetime = 10.0
+explosiveness = 0.1
+randomness = 0.4
+texture = ExtResource( 19 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector2( 0, 1 )
+spread = 82.25
+gravity = Vector2( 0, 30 )
+initial_velocity = 10.0
+angular_velocity = -100.0
+angular_velocity_random = 0.25
+orbit_velocity = -0.06
+orbit_velocity_random = 0.12
+radial_accel = 1.0
+damping = 0.1
+scale_amount = 0.2
+
+[node name="Tree5" type="Sprite" parent="Background/Trees"]
+material = SubResource( 8 )
+position = Vector2( 336, 100 )
+texture = ExtResource( 13 )
+offset = Vector2( 165, -105 )
+
+[node name="Leaves2" type="CPUParticles2D" parent="Background/Trees/Tree5"]
+position = Vector2( -292, -32 )
+scale = Vector2( 2, 1 )
+amount = 11
+lifetime = 10.0
+explosiveness = 0.1
+randomness = 0.4
+texture = ExtResource( 20 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector2( 0, 1 )
+spread = 82.25
+gravity = Vector2( 0, 20 )
+initial_velocity = 10.0
+angular_velocity = -100.0
+angular_velocity_random = 0.25
+orbit_velocity = -0.06
+orbit_velocity_random = 0.12
+radial_accel = 1.0
+damping = 0.1
+scale_amount = 0.2
+
+[node name="Tree6" type="Sprite" parent="Background/Trees"]
+material = SubResource( 8 )
+position = Vector2( 177, 19 )
+texture = ExtResource( 12 )
+
+[node name="Leaves3" type="CPUParticles2D" parent="Background/Trees/Tree6"]
 position = Vector2( -193, 88 )
 scale = Vector2( 2, 1 )
 amount = 15

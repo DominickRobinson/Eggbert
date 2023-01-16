@@ -12,6 +12,10 @@ const UP = Vector2(0,-1)
 onready var anim = $AnimationPlayer
 onready var detect = $Detect
 
+const bubble_normal_path = preload("res://Scenes/SpeechBubbles/BubbleNormal.tscn")
+const bubble_thought_path = preload("res://Scenes/SpeechBubbles/BubbleThought.tscn")
+const bubble_yell_path = preload("res://Scenes/SpeechBubbles/BubbleYell.tscn")
+
 var motion = Vector2()
 var alive = true
 
@@ -19,6 +23,7 @@ var mee = true
 var mee_path = "res://Assets/SoundEffects/mee.mp3"
 var mo_path = "res://Assets/SoundEffects/mo.mp3"
 
+var time_to_die = 4.0
 
 func _init():
 	GameManager.score = 0
@@ -37,20 +42,20 @@ func _physics_process(delta):
 		motion.y += GRAVITY
 		motion = move_and_slide(motion, UP)
 
-func die():
+func die(time=time_to_die):
 	alive = false
 	anim.stop()
 	anim.play("death")
 	motion.y = DEATH_MOTION_Y
 	motion.x = -HORIZONTAL_SPEED
-	lose_popup()
 	$Detect.collision_layer = 0
 	$Detect.collision_mask = 0
-	GameManager.play_audio("res://Assets/SoundEffects/ow.mp3", 10)
+#	GameManager.play_audio("res://Assets/SoundEffects/ow.mp3", 10)
+	lose_popup(time)
 
 
-func lose_popup():
-	yield(get_tree().create_timer(1.0), "timeout")
+func lose_popup(time):
+	yield(get_tree().create_timer(time), "timeout")
 	GameManager.lose()
 
 func _on_obstacle_collision(body):
@@ -68,7 +73,22 @@ func mee_moo():
 		GameManager.play_audio(mo_path, 20)
 	mee = not mee
 
-
+func speak(text, time, type):
+	var bubble
+	var src
+	match type:
+		"normal":
+			src = bubble_normal_path
+		"thought":
+			src = bubble_thought_path
+		"yell":
+			src = bubble_yell_path
+		_:
+			return false
+	
+	bubble = src.instance()
+	add_child(bubble)
+	bubble.prepare(text, time)
 
 
 

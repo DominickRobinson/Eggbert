@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/pow.mp3-847d6920db2e2e7e6799e30d6f920438.mp3str"
+
+[deps]
+
+source_file="res://Assets/SoundEffects/pow.mp3"
+dest_files=[ "res://.import/pow.mp3-847d6920db2e2e7e6799e30d6f920438.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

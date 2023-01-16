@@ -22,10 +22,7 @@ var score = 0
 
 func _ready():
 	GUI = get_GUI()
-	Input.action_press("a")
-	Input.action_press("a")
-	Input.action_press("a")
-	Input.action_press("a")
+
 
 func _unhandled_key_input(event):
 	if Input.is_action_just_pressed("quit"):
@@ -62,6 +59,8 @@ func play_audio(filepath = "", vol = 0):
 #	yield(a, "finished")
 #	a.queue_free()
 
+func change_scene(scene_path):
+	get_tree().change_scene(scene_path)
 
 func main_menu():
 	get_tree().change_scene("res://Scenes/Levels/MainMenu.tscn")

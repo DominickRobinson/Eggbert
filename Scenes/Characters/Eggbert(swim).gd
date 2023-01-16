@@ -16,7 +16,7 @@ func _ready():
 	motion.x = HORIZONTAL_SPEED
 	mask = maskResource.instance()
 	$Body/Head.add_child(mask)
-
+	$Swishing.play()
 
 func _physics_process(delta):
 	swim = $Touch/Button.pressed
@@ -24,6 +24,7 @@ func _physics_process(delta):
 		swim()
 		motion.x = HORIZONTAL_SPEED
 		motion = move_and_slide(motion, UP)
+	
 
 
 func swim():
@@ -38,8 +39,10 @@ func swim():
 		yield(self,"ready")
 		anim.playback_speed = float_playback_speed
 
-func die():
+func die(time=time_to_die):
 	.die()
+	
+	$Swishing.stop()
 	
 	mask.queue_free()
 	
@@ -51,6 +54,9 @@ func die():
 	mask.scale.y *= $Body.scale.y * 1.2
 	mask.global_position = $Body/Head.global_position
 
+	speak("*gargles*", 2, "yell")
+	GameManager.play_audio("res://Assets/SoundEffects/gargle.mp3", 15)
+	$Body/Head/Beak/Bubbles.emitting = true
 
 
 

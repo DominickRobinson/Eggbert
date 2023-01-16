@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Characters/GameCamera.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Levels/Level.gd" type="Script" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://Scenes/Characters/Eggbert.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Characters/Eggbert(swim).gd" type="Script" id=7]
 [ext_resource path="res://Scenes/Particles/BubblesCPU.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Particles/WaterCPU.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Particles/MaskCPU.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/SoundEffects/swimming.mp3" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 511.5, 47.5 )
@@ -29,8 +32,21 @@ instructions = "Tap or click and hold to where you want to SWIM up or down to!"
 [node name="Eggbert" parent="." instance=ExtResource( 6 )]
 script = ExtResource( 7 )
 HORIZONTAL_SPEED = 200
-GRAVITY = -5
-DEATH_MOTION_Y = 200
+GRAVITY = -2
+DEATH_MOTION_Y = 50
+
+[node name="Bubbles" parent="Eggbert/Body/Head/Beak" index="0" instance=ExtResource( 10 )]
+position = Vector2( 200, -400 )
+scale = Vector2( 1, 1 )
+
+[node name="Water" parent="Eggbert/Body/Wing-L" index="0" instance=ExtResource( 9 )]
+
+[node name="Water" parent="Eggbert/Body/Wing-R" index="0" instance=ExtResource( 9 )]
+position = Vector2( 480, -60 )
+
+[node name="Swishing" type="AudioStreamPlayer" parent="Eggbert"]
+stream = ExtResource( 11 )
+volume_db = -10.0
 
 [node name="Background(float)" parent="." instance=ExtResource( 3 )]
 
@@ -90,3 +106,5 @@ shape = SubResource( 2 )
 position = Vector2( 1158, 41 )
 
 [connection signal="body_entered" from="GameCamera(flappy)/Reset" to="GameCamera(flappy)" method="_on_Reset_body_entered"]
+
+[editable path="Eggbert"]

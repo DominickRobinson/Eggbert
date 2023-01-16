@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/meemo_meemo.mp3-195ee498683fdf20c9efcc7f509f0fbc.mp3str"
+
+[deps]
+
+source_file="res://Assets/SoundEffects/meemo_meemo.mp3"
+dest_files=[ "res://.import/meemo_meemo.mp3-195ee498683fdf20c9efcc7f509f0fbc.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
