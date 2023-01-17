@@ -1,6 +1,8 @@
 extends KinematicBody2D
 class_name Character
 
+export (String, "flappy", "glide", "swim", "anti-gravity", "none") var cutscene := "none"
+
 export var MAX_FALL_SPEED := 400
 export var HORIZONTAL_SPEED := 125
 var og_horizontal_speed = HORIZONTAL_SPEED
@@ -11,6 +13,7 @@ const UP = Vector2(0,-1)
 
 onready var anim = $AnimationPlayer
 onready var detect = $Detect
+onready var cutscene_anim = $Cutscene
 
 const bubble_normal_path = preload("res://Scenes/SpeechBubbles/BubbleNormal.tscn")
 const bubble_thought_path = preload("res://Scenes/SpeechBubbles/BubbleThought.tscn")
@@ -29,13 +32,17 @@ var started = false
 func _init():
 	GameManager.score = 0
 	GameManager.connect("point", self, "_on_point")
-	
 	yield(self, "ready")
+	cutscene_anim.reset_cutscene(cutscene)
+	
+	anim.play("wave")
 	detect.connect("body_entered", self, "_on_obstacle_collision")
-
 	anim.connect("animation_started", self, "_on_animation_started")
 	anim.connect("animation_finished", self, "_on_animation_finished")
 	anim.connect("animation_changed", self, "_on_animation_changed")
+
+func play_cutscene():
+	cutscene_anim.play_cutscene(cutscene)
 
 func _physics_process(delta):
 	if not alive:

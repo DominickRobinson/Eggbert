@@ -2,7 +2,7 @@ extends Control
 
 func _ready():
 	show()
-	get_tree().paused = true
+#	get_tree().paused = true
 	$AnimationPlayer.play("blink")
 
 func _unhandled_input(event):
@@ -14,6 +14,6 @@ func _on_Start_pressed():
 
 
 func start():
-	get_tree().paused = false
+#	get_tree().paused = false
 	get_parent().start()
 	queue_free()

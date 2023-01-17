@@ -1,12 +1,13 @@
 extends Character
 
+
 export var GLIDE := .06
 export var ANGULAR_GRAVITY := .03
 
 const windResource = preload("res://Scenes/Particles/WindCPU.tscn")
 onready var wind
 
-var glide_rotation = 0
+var glide_rotation = -2*PI/3
 
 #onready var audio = $AudioStreamPlayer
 
@@ -16,7 +17,6 @@ const MAX_ROTATION = PI/2.5
 
 func _ready():
 	GameManager.mode = GameManager.GameModes.GLIDE
-	motion.x = HORIZONTAL_SPEED
 
 func add_wind():
 	wind = windResource.instance()

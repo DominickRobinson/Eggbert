@@ -19,8 +19,10 @@ var display_resolution = Vector2(ProjectSettings.get_setting("display/window/siz
 
 var player_name = ""
 var score = 0
+var player
 
 func _ready():
+	player = get_player()
 	GUI = get_GUI()
 
 
@@ -70,6 +72,9 @@ func quit():
 
 func get_screen_size():
 	return display_resolution
+
+func get_player():
+	return get_tree().get_current_scene().get_node("Eggbert")
 
 func get_GUI():
 	return get_tree().get_current_scene().get_node("GUI")

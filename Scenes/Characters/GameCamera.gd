@@ -4,22 +4,36 @@ export (NodePath) var player_node_path := ""
 export (String, FILE) var wall_filepath := "res://Scenes/Props/Pipes/Pipe.tscn"
 export (Array, int) var wall_spawn_range := [0,0]
 
+export var following_x := true
+export var following_y := false
+
 onready var player = get_node(player_node_path)
 var wallResource
-
-var starting_y
 var random = RandomNumberGenerator.new()
 
+
 func _ready():
-	starting_y = global_position.y
 	wallResource = load(wall_filepath)
 	limit_left = global_position.x - 512
 
 func _physics_process(delta):
+	if following_x:
+		follow_x()
+	
+	if following_y:
+		follow_y()
+
+
+func follow_x():
 	if is_instance_valid(player):
 		global_position.x = player.global_position.x
-	global_position.y = starting_y
-	
+
+func follow_y():
+	if is_instance_valid(player):
+		global_position.y = player.global_position.y
+
+func change_y(value : int):
+	global_position.y = value
 
 
 func _on_Reset_body_entered(body):

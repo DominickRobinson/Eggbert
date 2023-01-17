@@ -12,7 +12,7 @@ colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.156863, 1, 1, 1, 0 )
 [node name="Water" type="CPUParticles2D"]
 show_behind_parent = true
 position = Vector2( -540, -40 )
-amount = 50
+amount = 25
 lifetime = 2.0
 local_coords = false
 texture = ExtResource( 1 )

@@ -11,21 +11,23 @@ var maskResource = preload("res://Scenes/Props/Mask.tscn")
 onready var mask
 
 func _ready():
+	scuba_mask()
 	GameManager.mode = GameManager.GameModes.SWIM
-	anim.play("swim")
-	motion.x = HORIZONTAL_SPEED
-	mask = maskResource.instance()
-	$Body/Head.add_child(mask)
-	$Swishing.play()
 
 func _physics_process(delta):
+	if not started:
+		return
 	swim = $Touch/Button.pressed
 	if alive:
 		swim()
 		motion.x = HORIZONTAL_SPEED
 		motion = move_and_slide(motion, UP)
 	
-
+func scuba_mask():
+	mask = maskResource.instance()
+	$Body/Head.add_child(mask)
+	mask.position += $Body/Head.offset
+	$Swishing.play()
 
 func swim():
 	if swim:

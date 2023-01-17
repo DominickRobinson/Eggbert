@@ -35,6 +35,7 @@ func start():
 	$Score.visible = true
 	$Buttons.visible = true
 	leaderboard.visible = false
+	GameManager.get_player().play_cutscene()
 
 
 func set_score(value):

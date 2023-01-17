@@ -30,19 +30,24 @@ mode = "SWIM"
 instructions = "Tap or click and hold to where you want to SWIM up or down to!"
 
 [node name="Eggbert" parent="." instance=ExtResource( 6 )]
+position = Vector2( 0, 0 )
+rotation = 0.0
 script = ExtResource( 7 )
+cutscene = "swim"
 HORIZONTAL_SPEED = 200
 GRAVITY = -2
 DEATH_MOTION_Y = 50
 
 [node name="Bubbles" parent="Eggbert/Body/Head/Beak" index="0" instance=ExtResource( 10 )]
 position = Vector2( 200, -400 )
-scale = Vector2( 1, 1 )
-
-[node name="Water" parent="Eggbert/Body/Wing-L" index="0" instance=ExtResource( 9 )]
 
 [node name="Water" parent="Eggbert/Body/Wing-R" index="0" instance=ExtResource( 9 )]
-position = Vector2( 480, -60 )
+position = Vector2( 280, -20 )
+emitting = false
+
+[node name="Water" parent="Eggbert/Body/Wing-L" index="0" instance=ExtResource( 9 )]
+position = Vector2( -280, 0 )
+emitting = false
 
 [node name="Swishing" type="AudioStreamPlayer" parent="Eggbert"]
 stream = ExtResource( 11 )
@@ -78,33 +83,38 @@ visible = false
 z_index = 3
 color = Color( 0.435294, 0.443137, 1, 1 )
 
-[node name="GameCamera(flappy)" type="Camera2D" parent="."]
+[node name="GameCamera" type="Camera2D" parent="."]
+position = Vector2( 0, -500 )
 current = true
+limit_top = -900
+smoothing_enabled = true
 script = ExtResource( 1 )
 player_node_path = NodePath("../Eggbert")
 wall_spawn_range = [ -180, 80 ]
+following_x = false
+following_y = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="GameCamera(flappy)" groups=["Obstacles"]]
+[node name="StaticBody2D" type="StaticBody2D" parent="GameCamera" groups=["Obstacles"]]
 z_index = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera(flappy)/StaticBody2D"]
-position = Vector2( -3, 259 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera/StaticBody2D"]
+position = Vector2( -314, 314 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="GameCamera(flappy)/StaticBody2D"]
-position = Vector2( 0, -400 )
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GameCamera/StaticBody2D"]
+position = Vector2( -1573, -273 )
 shape = SubResource( 3 )
 
-[node name="Reset" type="Area2D" parent="GameCamera(flappy)"]
+[node name="Reset" type="Area2D" parent="GameCamera"]
 position = Vector2( -750, 0 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera(flappy)/Reset"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera/Reset"]
 position = Vector2( -203, 6 )
 shape = SubResource( 2 )
 
-[node name="Bubbles" parent="GameCamera(flappy)" instance=ExtResource( 8 )]
+[node name="Bubbles" parent="GameCamera" instance=ExtResource( 8 )]
 position = Vector2( 1158, 41 )
 
-[connection signal="body_entered" from="GameCamera(flappy)/Reset" to="GameCamera(flappy)" method="_on_Reset_body_entered"]
+[connection signal="body_entered" from="GameCamera/Reset" to="GameCamera" method="_on_Reset_body_entered"]
 
 [editable path="Eggbert"]
