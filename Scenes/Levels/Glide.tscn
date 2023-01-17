@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Characters/GameCamera.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Levels/Cutscene.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Props/Pipes/Pipe.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Backgrounds/Background(glide).tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Characters/Eggbert.tscn" type="PackedScene" id=6]
@@ -16,6 +17,99 @@ extents = Vector2( 511.5, 47.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 45, 364 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -413, 10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "animation"
+tracks/2/path = NodePath("AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": PoolStringArray( "RESET", "RESET" ),
+"times": PoolRealArray( -0.1, 0 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "glide_start"
+length = 3.5
+step = 0.25
+tracks/0/type = "animation"
+tracks/0/path = NodePath("AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": PoolStringArray( "wave", "run", "jump", "glide" ),
+"times": PoolRealArray( 0, 1.5, 2.25, 3.5 )
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "let's get this bread!", 3.0, "normal" ],
+"method": "speak"
+}, {
+"args": [  ],
+"method": "add_wind"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5, 2.5, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -413, 10 ), Vector2( -413, 10 ), Vector2( -215, 3 ), Vector2( -2, -211 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.0135368, 2.5, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0 ]
+}
 
 [node name="Glide" type="Node2D"]
 script = ExtResource( 8 )
@@ -78,16 +172,22 @@ position = Vector2( 2000, -80 )
 color = "ice_blue"
 
 [node name="Eggbert" parent="." instance=ExtResource( 6 )]
-position = Vector2( -34, -152 )
-rotation = 1.48679
+position = Vector2( -413, 10 )
 script = ExtResource( 7 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Eggbert"]
 stream = ExtResource( 9 )
 volume_db = 10.0
 
+[node name="Cutscene" type="AnimationPlayer" parent="Eggbert"]
+anims/RESET = SubResource( 4 )
+anims/glide_start = SubResource( 3 )
+script = ExtResource( 3 )
+
 [node name="Mountain-side" type="Sprite" parent="."]
 position = Vector2( -7, 101 )
 texture = ExtResource( 11 )
 
 [connection signal="body_entered" from="GameCamera(glide)/Reset" to="GameCamera(glide)" method="_on_Reset_body_entered"]
+
+[editable path="Eggbert"]

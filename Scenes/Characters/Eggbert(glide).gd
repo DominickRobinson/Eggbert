@@ -17,14 +17,8 @@ const MAX_ROTATION = PI/2.5
 func _ready():
 	GameManager.mode = GameManager.GameModes.GLIDE
 	motion.x = HORIZONTAL_SPEED
-	
-	yield(self, "ready")
-	anim.play("wave")
-	speak("let's get this bread", 2, "normal")
-	yield(get_tree().create_timer(2), "timeout")
-	anim.play("glide")
-	started = true
-	
+
+func add_wind():
 	wind = windResource.instance()
 	add_child(wind)
 

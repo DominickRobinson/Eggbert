@@ -73,7 +73,7 @@ func mee_moo():
 		GameManager.play_audio(mo_path, 20)
 	mee = not mee
 
-func speak(text, time, type):
+func speak(text : String, time : float, type : String):
 	var bubble
 	var src
 	match type:

@@ -25,7 +25,6 @@ DEATH_MOTION_Y = 0
 FLIGHT_ANGLE_DEGREES = 120
 
 [node name="ElectricTrail" parent="Eggbert" instance=ExtResource( 6 )]
-offset = Vector2( 0, 5 )
 
 [node name="Background(anti-gravity)" parent="." instance=ExtResource( 1 )]
 
