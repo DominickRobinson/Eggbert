@@ -75,7 +75,7 @@ func _on_obstacle_collision(body):
 	if not alive:
 		return
 	if body.is_in_group("Obstacles"):
-		GameManager.play_audio("res://Assets/SoundEffects/hit.mp3", 0)
+		GameManager.play_audio("res://Assets/SoundEffects/hit.mp3", 10)
 		die()
 
 

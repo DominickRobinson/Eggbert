@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sky_waves.png-884c084f597f6b59bb11cbe1d8af2176.stex"
+path="res://.import/waves.png-a3591ac2df3810bc87db1142132ea72f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Backgrounds/Underwater/Sky_waves.png"
-dest_files=[ "res://.import/Sky_waves.png-884c084f597f6b59bb11cbe1d8af2176.stex" ]
+source_file="res://Assets/Backgrounds/Underwater/waves.png"
+dest_files=[ "res://.import/waves.png-a3591ac2df3810bc87db1142132ea72f.stex" ]
 
 [params]
 

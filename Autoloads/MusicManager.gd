@@ -16,6 +16,8 @@ export var audio_bus_name := "Master"
 onready var _bus := AudioServer.get_bus_index(audio_bus_name)
 
 onready var music_player = $MusicPlayer
+onready var tween = $Tween
+
 
 func _ready():
 	current_volume = db2linear(AudioServer.get_bus_volume_db(_bus))
@@ -30,10 +32,21 @@ func play_track(track_name = "", vol = -10.0):
 	
 	var filepath = get_track_filepath(current_track)
 	music_player.stream = load(filepath)
-	music_player.volume_db = vol
+#	music_player.volume_db = vol
+	
+	fade_in(vol, 5)
 	music_player.play()
+	
 	return music_player
 
+
+func fade_in(vol, duration):
+	tween.interpolate_property(music_player, "volume_db", -80, vol, duration, Tween.TRANS_CIRC, Tween.EASE_OUT)
+	tween.start()
+
+func fade_out(duration):
+	tween.interpolate_property(music_player, "volume_db", music_player.volume_db, -80, duration, Tween.TRANS_CIRC, Tween.EASE_IN)
+	tween.start()
 
 func get_track_filepath(track_name = ""):
 	return "res://Assets/Music/" + track_name + ".mp3"

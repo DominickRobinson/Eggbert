@@ -44,6 +44,7 @@ func start_moving():
 func add_trail():
 	trail = trailResource.instance()
 	add_child(trail)
+	trail.despawn = false
 
 func die(time=4.5):
 	trail.queue_free()

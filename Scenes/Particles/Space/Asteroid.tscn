@@ -4,28 +4,29 @@
 [ext_resource path="res://Scenes/Particles/Space/TrailScenes/Smoketrail_Static.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Particles/Space/TrailScripts/firedeco.gd" type="Script" id=3]
 
-[sub_resource type="Curve" id=18]
+[sub_resource type="Curve" id=16]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.656618, 0.680505 ), -1.05209, -1.05209, 0, 0, Vector2( 0.747794, 0.355596 ), 0.0, 0.0, 0, 0, Vector2( 0.818382, 0.442238 ), 0.0, 0.0, 0, 0, Vector2( 0.903677, 0.232852 ), 0.0, 0.0, 0, 0, Vector2( 0.956618, 0.348375 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.15343 ), -1.62235, 0.0, 0, 0 ]
 
 [sub_resource type="Gradient" id=17]
-offsets = PoolRealArray( 0, 0.0130208, 0.610294, 1 )
-colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 0, 0.0117647, 1, 0.631373, 0.564706, 0, 0.929412, 1, 0.678431 )
+offsets = PoolRealArray( 0, 0.0130208, 0.617188, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 0, 1, 0.913725, 0, 0.305882, 1, 0, 0, 0.552941 )
 
-[sub_resource type="CanvasItemMaterial" id=15]
+[sub_resource type="CanvasItemMaterial" id=18]
 blend_mode = 1
 
-[node name="Comet" type="Node2D"]
+[node name="Asteroid" type="Node2D"]
+scale = Vector2( 2, 2 )
 script = ExtResource( 3 )
 
 [node name="Smoketrail" parent="." instance=ExtResource( 2 )]
 width = 150.0
-width_curve = SubResource( 18 )
+width_curve = SubResource( 16 )
 gravity = Vector2( 0, 0 )
 wind = Vector2( 0, 0 )
 gradient_col = SubResource( 17 )
 max_points = 40
 
 [node name="Fire" type="Sprite" parent="."]
-modulate = Color( 0.2, 0.764706, 0.752941, 1 )
-material = SubResource( 15 )
+modulate = Color( 1, 0.329412, 0, 0.823529 )
+material = SubResource( 18 )
 texture = ExtResource( 1 )

@@ -6,12 +6,12 @@
 _data = [ Vector2( 0.00961538, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.265766 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="Gradient" id=2]
-offsets = PoolRealArray( 0, 0.671196, 1 )
-colors = PoolColorArray( 0.0379747, 0.391218, 1, 1, 0.257919, 0.522334, 0.978027, 0.48913, 1, 1, 1, 0 )
+offsets = PoolRealArray( 0, 0.326087, 1 )
+colors = PoolColorArray( 0.413502, 0.628857, 1, 1, 0.56172, 0.722651, 1, 0.747283, 1, 1, 1, 0 )
 
 [node name="Splash" type="CPUParticles2D"]
 emitting = false
-amount = 25
+amount = 50
 one_shot = true
 explosiveness = 0.98
 local_coords = false
@@ -19,8 +19,9 @@ emission_shape = 2
 emission_rect_extents = Vector2( 10, 5 )
 direction = Vector2( 0, -1 )
 spread = 51.38
-initial_velocity = 100.0
-scale_amount = 6.0
+initial_velocity = 300.0
+initial_velocity_random = 0.2
+scale_amount = 10.0
 scale_amount_random = 0.28
 scale_amount_curve = SubResource( 1 )
 color = Color( 0, 0, 1, 1 )

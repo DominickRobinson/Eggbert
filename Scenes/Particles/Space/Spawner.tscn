@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Backgrounds/AsteroidSpawner.gd" type="Script" id=1]
+
+[node name="Spawner" type="Node2D"]
+position = Vector2( -2, -491 )
+script = ExtResource( 1 )
+frequency = 2
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
