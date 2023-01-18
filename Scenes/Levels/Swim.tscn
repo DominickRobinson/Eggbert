@@ -30,8 +30,7 @@ mode = "SWIM"
 instructions = "Tap or click and hold to where you want to SWIM up or down to!"
 
 [node name="Eggbert" parent="." instance=ExtResource( 6 )]
-modulate = Color( 0.588235, 0.768627, 1, 1 )
-position = Vector2( -12, -20 )
+position = Vector2( -64, -630 )
 rotation = -12.5664
 script = ExtResource( 7 )
 cutscene = "swim"
@@ -44,9 +43,11 @@ position = Vector2( 200, -400 )
 
 [node name="Water" parent="Eggbert/Body/Wing-R" index="0" instance=ExtResource( 9 )]
 position = Vector2( 280, -20 )
+emitting = false
 
 [node name="Water" parent="Eggbert/Body/Wing-L" index="0" instance=ExtResource( 9 )]
 position = Vector2( -280, 0 )
+emitting = false
 
 [node name="Swishing" type="AudioStreamPlayer" parent="Eggbert"]
 stream = ExtResource( 11 )
@@ -90,6 +91,8 @@ smoothing_enabled = true
 script = ExtResource( 1 )
 player_node_path = NodePath("../Eggbert")
 wall_spawn_range = [ -180, 80 ]
+following_x = false
+following_y = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="GameCamera" groups=["Obstacles"]]
 z_index = 1
