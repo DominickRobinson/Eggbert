@@ -151,12 +151,12 @@ margin_bottom = 384.0
 text = "Quit"
 
 [node name="Version" type="Label" parent="CanvasLayer"]
-margin_left = 575.0
+margin_left = 573.0
 margin_top = 569.0
 margin_right = 1013.0
 margin_bottom = 591.0
 custom_fonts/font = ExtResource( 9 )
-text = "Version 0.9 (start glide animation)"
+text = "Version 0.9 (fix snow color)"
 align = 2
 valign = 1
 __meta__ = {
