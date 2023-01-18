@@ -42,7 +42,7 @@ layer = -1
 current = true
 
 [node name="Eggbert" parent="." instance=ExtResource( 3 )]
-position = Vector2( 145.469, 170.602 )
+position = Vector2( 122.466, 169.665 )
 script = ExtResource( 7 )
 HORIZONTAL_SPEED = 0
 GRAVITY = 0
@@ -178,3 +178,4 @@ visible = false
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons/Quit" to="." method="_on_Quit_pressed"]
 
 [editable path="Background"]
+[editable path="Eggbert"]

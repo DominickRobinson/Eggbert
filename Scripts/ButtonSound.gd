@@ -10,7 +10,7 @@ func connect_sounds():
 
 
 func hover_sound():
-	GameManager.play_audio(hover_audio, -10)
+	GameManager.play_audio(hover_audio, -15)
 
 func click_sound():
 	GameManager.play_audio(click_audio)

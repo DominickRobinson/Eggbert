@@ -2,19 +2,27 @@ extends Character
 
 export var FLAP := 150
 
+const windResource = preload("res://Scenes/Particles/WindCPU.tscn")
+
 var flap = false
 
 
 func _ready():
 	GameManager.mode = GameManager.GameModes.FLAP
+	motion = Vector2(1,0).rotated(deg2rad(20)) * HORIZONTAL_SPEED
 	motion.x = HORIZONTAL_SPEED
 	$Touch/Button.connect("pressed", self, "flap")
 
 func _unhandled_key_input(event):
+	if not started:
+		return
 	if Input.is_action_just_pressed("flap"):
 		flap()
 
 func _physics_process(delta):
+	if not started:
+		return
+	
 	if alive:
 		motion.y += GRAVITY
 		if motion.y > MAX_FALL_SPEED:
@@ -23,12 +31,13 @@ func _physics_process(delta):
 
 
 func flap():
-	if not alive:
+	if not alive or not started:
 		return
 	motion.y = -FLAP
 	anim.stop()
 	anim.play("flap")
 	mee_moo()
+
 
 func die(time=1.5):
 	.die(time)

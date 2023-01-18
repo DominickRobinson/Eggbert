@@ -29,6 +29,8 @@ var mo_path = "res://Assets/SoundEffects/mo.mp3"
 var time_to_die = 4.0
 var started = false
 
+var flaps = 0
+
 func _init():
 	GameManager.score = 0
 	GameManager.connect("point", self, "_on_point")
@@ -45,6 +47,10 @@ func play_cutscene():
 	cutscene_anim.play_cutscene(cutscene)
 
 func _physics_process(delta):
+	if not started and (Input.is_action_just_pressed("flap") or Input.is_action_just_pressed("left_mouseclick")):
+		flaps += 1
+		if flaps > 1:
+			$Cutscene.playback_speed = 5
 	if not alive:
 		motion.x = lerp(motion.x, 0, .02)
 		motion.y += GRAVITY
@@ -69,6 +75,7 @@ func _on_obstacle_collision(body):
 	if not alive:
 		return
 	if body.is_in_group("Obstacles"):
+		GameManager.play_audio("res://Assets/SoundEffects/hit.mp3", 0)
 		die()
 
 

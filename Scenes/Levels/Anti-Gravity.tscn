@@ -115,8 +115,7 @@ mode = "ANTI-GRAVITY"
 instructions = "Tap, click, or press space to REVERSE GRAVITY!"
 
 [node name="Eggbert" parent="." instance=ExtResource( 7 )]
-position = Vector2( 0, 0 )
-rotation = 0.0
+position = Vector2( 122.466, 169.665 )
 script = ExtResource( 8 )
 cutscene = "anti-gravity"
 HORIZONTAL_SPEED = 300

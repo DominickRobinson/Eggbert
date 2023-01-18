@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Characters/Eggbert.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Scenes/Characters/Eggbert(flap).gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Particles/SweatCPU.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Levels/Level.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Backgrounds/Plains/start/bird_house.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Backgrounds/Plains/start/bird_fountain.png" type="Texture" id=10]
 
 [node name="Flappy" type="Node2D"]
 script = ExtResource( 8 )
@@ -16,6 +18,28 @@ track = "flappy"
 [node name="GUI" parent="." instance=ExtResource( 2 )]
 mode = "FLAP"
 instructions = "Tap, click, or press space to FLAP upwards!"
+
+[node name="Start" type="Node2D" parent="."]
+
+[node name="House" type="Sprite" parent="Start"]
+position = Vector2( -379, 83 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+
+[node name="Bath" type="Sprite" parent="Start"]
+position = Vector2( -138, 116 )
+texture = ExtResource( 10 )
+
+[node name="Eggbert" parent="." instance=ExtResource( 1 )]
+position = Vector2( 60, -159 )
+rotation = 12.5664
+script = ExtResource( 6 )
+cutscene = "flappy"
+
+[node name="Sweat" parent="Eggbert" instance=ExtResource( 7 )]
+show_behind_parent = true
+position = Vector2( -1, -19 )
+emitting = false
 
 [node name="GameCamera(flappy)" parent="." instance=ExtResource( 3 )]
 player_node_path = NodePath("../Eggbert")
@@ -37,10 +61,4 @@ position = Vector2( 1400, 13 )
 [node name="Pipe4" parent="Walls" instance=ExtResource( 4 )]
 position = Vector2( 1800, -80 )
 
-[node name="Eggbert" parent="." instance=ExtResource( 1 )]
-script = ExtResource( 6 )
-
-[node name="Sweat" parent="Eggbert" instance=ExtResource( 7 )]
-show_behind_parent = true
-position = Vector2( -1, -19 )
-emitting = false
+[editable path="Eggbert"]

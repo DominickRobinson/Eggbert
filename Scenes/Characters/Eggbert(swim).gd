@@ -10,6 +10,8 @@ var swim = false
 var maskResource = preload("res://Scenes/Props/Mask.tscn")
 onready var mask
 
+const splashResource = preload("res://Scenes/Particles/SplashCPU.tscn")
+
 func _ready():
 	scuba_mask()
 	GameManager.mode = GameManager.GameModes.SWIM
@@ -27,7 +29,12 @@ func scuba_mask():
 	mask = maskResource.instance()
 	$Body/Head.add_child(mask)
 	mask.position += $Body/Head.offset
-	$Swishing.play()
+
+func splash():
+	var s = splashResource.instance()
+	get_parent().add_child(s)
+	s.global_position = global_position
+	s.global_position.y -= 20
 
 func swim():
 	if swim:

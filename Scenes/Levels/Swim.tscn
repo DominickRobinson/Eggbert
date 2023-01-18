@@ -30,8 +30,7 @@ mode = "SWIM"
 instructions = "Tap or click and hold to where you want to SWIM up or down to!"
 
 [node name="Eggbert" parent="." instance=ExtResource( 6 )]
-position = Vector2( 0, 0 )
-rotation = 0.0
+position = Vector2( -315, -500 )
 script = ExtResource( 7 )
 cutscene = "swim"
 HORIZONTAL_SPEED = 200
@@ -92,7 +91,6 @@ script = ExtResource( 1 )
 player_node_path = NodePath("../Eggbert")
 wall_spawn_range = [ -180, 80 ]
 following_x = false
-following_y = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="GameCamera" groups=["Obstacles"]]
 z_index = 1
