@@ -52,6 +52,7 @@ func reload():
 	get_tree().reload_current_scene()
 
 func play_audio(filepath = "", vol = 0):
+	print(filepath)
 	var a = AudioStreamPlayer.new()
 	a.stream = load(filepath)
 	a.volume_db = vol

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Scenes/Characters/GameCamera.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=2]
@@ -20,12 +20,20 @@
 [ext_resource path="res://Assets/Characters/Eggbert/eye-l.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Characters/Eggbert/foot-l.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Characters/Eggbert/tail.png" type="Texture" id=20]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 511.5, 47.5 )
+[ext_resource path="res://Scenes/Misc/Wall.gd" type="Script" id=21]
+[ext_resource path="res://Assets/Props/Pipes/pipe-red.png" type="Texture" id=22]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 45, 364 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 77.5, 325.125 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 13.5, 88.5 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 1077.62, 47.5 )
 
 [sub_resource type="CircleShape2D" id=7]
 radius = 19.2354
@@ -1041,8 +1049,7 @@ tracks/17/keys = {
 "values": [ 0.0, 33.217, 0.0, -16.2639, -16.2639 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "flap"
+[sub_resource type="Animation" id=32]
 length = 0.4
 step = 0.05
 tracks/0/type = "value"
@@ -2759,7 +2766,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=25]
 resource_name = "cutscene_glide"
-length = 2.5
+length = 2.6
 step = 0.05
 tracks/0/type = "animation"
 tracks/0/path = NodePath("AnimationPlayer")
@@ -2769,7 +2776,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "clips": PoolStringArray( "wave", "run", "jump", "glide" ),
-"times": PoolRealArray( 0, 1, 1.875, 2.4 )
+"times": PoolRealArray( 0, 1, 1.9, 2.6 )
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath(".")
@@ -2795,7 +2802,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1, 2, 2.05, 2.5 ),
+"times": PoolRealArray( 0, 1, 2, 2.05, 2.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -413, 10 ), Vector2( -413, 10 ), Vector2( -191, 1 ), Vector2( -191, 1 ), Vector2( -109, -209 ) ]
@@ -2807,10 +2814,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.0135368, 2.1, 2.4, 2.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.0135368, 2.1, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.0, 0.0, -720.0, -720.0 ]
+"values": [ 0.0, 0.0, 0.0, -360.0 ]
 }
 
 [sub_resource type="Animation" id=26]
@@ -2849,7 +2856,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.00466507, 1.75, 2.375, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.0, -720.0, -720.0 ]
+"values": [ 0.0, 0.0, 720.0, 720.0 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("../GameCamera:following_y")
@@ -2971,17 +2978,6 @@ script = ExtResource( 1 )
 player_node_path = NodePath("../Eggbert")
 wall_spawn_range = [ -200, 200 ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="GameCamera(glide)" groups=["Obstacles"]]
-z_index = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera(glide)/StaticBody2D"]
-position = Vector2( 0, 400 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="GameCamera(glide)/StaticBody2D"]
-position = Vector2( 0, -400 )
-shape = SubResource( 1 )
-
 [node name="Reset" type="Area2D" parent="GameCamera(glide)"]
 position = Vector2( -750, 0 )
 
@@ -2997,9 +2993,47 @@ position = Vector2( 394, -331 )
 [node name="Walls" type="Node2D" parent="."]
 position = Vector2( 66, 25 )
 
-[node name="Pipe" parent="Walls" instance=ExtResource( 4 )]
+[node name="Pipe" type="StaticBody2D" parent="Walls" groups=["Obstacles"]]
 position = Vector2( 600, -27 )
+scale = Vector2( 0.8, 1 )
+script = ExtResource( 21 )
 color = "ice_blue"
+
+[node name="Upper" type="CollisionShape2D" parent="Walls/Pipe"]
+position = Vector2( 0, -417 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Pipe/Upper"]
+show_behind_parent = true
+position = Vector2( 0, 95 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 22 )
+flip_v = true
+
+[node name="Lower" type="CollisionShape2D" parent="Walls/Pipe"]
+position = Vector2( 0, 416.875 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Pipe/Lower"]
+show_behind_parent = true
+position = Vector2( 0, -95.875 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 22 )
+
+[node name="Sensor" type="Area2D" parent="Walls/Pipe"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pipe/Sensor"]
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pipe"]
+position = Vector2( -16.3038, -1827.33 )
+rotation = 1.5764
+shape = SubResource( 31 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pipe"]
+position = Vector2( -32.9097, 1826.05 )
+rotation = 1.5764
+shape = SubResource( 31 )
 
 [node name="Pipe2" parent="Walls" instance=ExtResource( 4 )]
 position = Vector2( 950, -109 )
@@ -3019,7 +3053,7 @@ color = "ice_blue"
 
 [node name="Eggbert" type="KinematicBody2D" parent="." groups=["Players"]]
 position = Vector2( -109, -209 )
-rotation = -12.5664
+rotation = 6.28319
 z_index = 2
 script = ExtResource( 7 )
 cutscene = "glide"
@@ -3105,7 +3139,7 @@ shape = SubResource( 15 )
 anims/RESET = SubResource( 29 )
 anims/death = SubResource( 30 )
 anims/dive = SubResource( 19 )
-anims/flap = SubResource( 3 )
+anims/flap = SubResource( 32 )
 anims/flap_idle = SubResource( 5 )
 anims/glide = SubResource( 4 )
 anims/jump = SubResource( 18 )
@@ -3150,4 +3184,6 @@ position = Vector2( -7, 101 )
 texture = ExtResource( 11 )
 
 [connection signal="body_entered" from="GameCamera(glide)/Reset" to="GameCamera(glide)" method="_on_Reset_body_entered"]
+[connection signal="area_entered" from="Walls/Pipe/Sensor" to="Walls/Pipe" method="_on_Sensor_area_entered"]
+[connection signal="body_entered" from="Walls/Pipe/Sensor" to="Walls/Pipe" method="_on_Sensor_body_entered"]
 [connection signal="body_entered" from="Eggbert/Detect" to="Eggbert" method="_on_Detect_body_entered"]

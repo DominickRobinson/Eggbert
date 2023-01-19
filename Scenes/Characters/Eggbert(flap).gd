@@ -9,7 +9,7 @@ var flap = false
 
 func _ready():
 	GameManager.mode = GameManager.GameModes.FLAP
-	motion = Vector2(1,0).rotated(deg2rad(20)) * HORIZONTAL_SPEED
+	motion = Vector2(1,0).rotated(-deg2rad(70)) * HORIZONTAL_SPEED
 	motion.x = HORIZONTAL_SPEED
 	$Touch/Button.connect("pressed", self, "flap")
 

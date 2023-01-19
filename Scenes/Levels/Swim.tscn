@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Characters/GameCamera.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Levels/Level.gd" type="Script" id=2]
@@ -15,9 +15,6 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 511.5, 47.5 )
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 511.5, 47.5 )
-
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 45, 364 )
 
@@ -30,8 +27,9 @@ mode = "SWIM"
 instructions = "Tap or click and hold to where you want to SWIM up or down to!"
 
 [node name="Eggbert" parent="." instance=ExtResource( 6 )]
-position = Vector2( -64, -630 )
-rotation = -12.5664
+modulate = Color( 0.588235, 0.768627, 1, 1 )
+position = Vector2( -12, -20 )
+rotation = 12.5664
 script = ExtResource( 7 )
 cutscene = "swim"
 HORIZONTAL_SPEED = 200
@@ -43,11 +41,9 @@ position = Vector2( 200, -400 )
 
 [node name="Water" parent="Eggbert/Body/Wing-R" index="0" instance=ExtResource( 9 )]
 position = Vector2( 280, -20 )
-emitting = false
 
 [node name="Water" parent="Eggbert/Body/Wing-L" index="0" instance=ExtResource( 9 )]
 position = Vector2( -280, 0 )
-emitting = false
 
 [node name="Swishing" type="AudioStreamPlayer" parent="Eggbert"]
 stream = ExtResource( 11 )
@@ -91,8 +87,6 @@ smoothing_enabled = true
 script = ExtResource( 1 )
 player_node_path = NodePath("../Eggbert")
 wall_spawn_range = [ -180, 80 ]
-following_x = false
-following_y = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="GameCamera" groups=["Obstacles"]]
 z_index = 1
@@ -100,10 +94,6 @@ z_index = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera/StaticBody2D"]
 position = Vector2( -314, 314 )
 shape = SubResource( 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="GameCamera/StaticBody2D"]
-position = Vector2( -1573, -273 )
-shape = SubResource( 3 )
 
 [node name="Reset" type="Area2D" parent="GameCamera"]
 position = Vector2( -750, 0 )
