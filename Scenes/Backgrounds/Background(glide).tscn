@@ -204,7 +204,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=8]
 resource_name = "sky"
-length = 60.0
+length = 70.0
 loop = true
 step = 2.5
 tracks/0/type = "value"
@@ -214,10 +214,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 5, 15, 25, 37.5, 45, 55, 60 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 12.5, 17.5, 22.5, 27.5, 32.5, 45, 50, 55, 60, 70 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.580392, 0.717647, 1, 1 ), Color( 0.705882, 0.92549, 0.709804, 1 ), Color( 0.164706, 0.619608, 0.74902, 1 ), Color( 0.313726, 0, 1, 1 ), Color( 0.313726, 0, 1, 1 ), Color( 0.164706, 0.619608, 0.74902, 1 ), Color( 0.705882, 0.92549, 0.709804, 1 ), Color( 0.580392, 0.717647, 1, 1 ) ]
+"values": [ Color( 0.580392, 0.717647, 1, 1 ), Color( 0.3, 0.696078, 0.739216, 1 ), Color( 0.705882, 0.92549, 0.709804, 1 ), Color( 1, 0.576471, 0.266667, 1 ), Color( 0.411765, 0.290196, 0.658824, 1 ), Color( 0.313726, 0, 1, 1 ), Color( 0.313726, 0, 1, 1 ), Color( 0.411765, 0.290196, 0.658824, 1 ), Color( 1, 0.431373, 0.764706, 1 ), Color( 0.705882, 0.92549, 0.709804, 1 ), Color( 0.580392, 0.717647, 1, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("../Planets/Sun:position")
@@ -226,7 +226,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 20, 27.5, 35, 42.5, 60 ),
+"times": PoolRealArray( 0, 30, 37.5, 45, 52.5, 70 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -400, -234 ), Vector2( -400, -234 ), Vector2( -392, 324 ), Vector2( -392, 324 ), Vector2( -400, -234 ), Vector2( -400, -234 ) ]
@@ -238,7 +238,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 20, 27.5, 35, 42.5, 60 ),
+"times": PoolRealArray( 0, 30, 37.5, 45, 52.5, 70 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -432, 433 ), Vector2( -432, 433 ), Vector2( -403, -217 ), Vector2( -403, -217 ), Vector2( -432, 433 ), Vector2( -432, 433 ) ]
@@ -250,7 +250,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 17.5, 27.5, 35, 45, 60 ),
+"times": PoolRealArray( 0, 27.5, 37.5, 45, 55, 70 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.443137, 0.568627, 1, 1 ), Color( 0.443137, 0.568627, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
@@ -299,7 +299,6 @@ anims/moon = SubResource( 6 )
 [node name="SkyAnimator" type="AnimationPlayer" parent="Background"]
 root_node = NodePath("../Sky")
 autoplay = "sky"
-playback_speed = 0.6
 anims/RESET = SubResource( 7 )
 anims/sky = SubResource( 8 )
 

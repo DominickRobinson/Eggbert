@@ -121,7 +121,6 @@ cutscene = "anti-gravity"
 HORIZONTAL_SPEED = 300
 GRAVITY = 0
 DEATH_MOTION_Y = 0
-FLIGHT_ANGLE_DEGREES = 33
 
 [node name="Cutscene" parent="Eggbert" index="6"]
 anims/RESET_anti-gravity = SubResource( 1 )

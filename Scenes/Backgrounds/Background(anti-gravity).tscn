@@ -19,7 +19,7 @@
 [ext_resource path="res://Assets/Characters/Honkey/HonkeyIdle07.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Characters/Honkey/HonkeyIdle04.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Characters/Honkey/HonkeyIdle01.png" type="Texture" id=19]
-[ext_resource path="res://Scenes/Particles/Space/Spawner.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Particles/Space/AsteroidSpawner.tscn" type="PackedScene" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -90,6 +90,7 @@ motion_offset = Vector2( 2000, 0 )
 position = Vector2( 319, -50 )
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 1 )
+frame = 9
 playing = true
 
 [node name="HonkeyPlanet" type="Sprite" parent="Background/Honkey"]
@@ -119,16 +120,59 @@ modulate = Color( 0.839216, 0.839216, 0.839216, 0.364706 )
 motion_scale = Vector2( 0.5, 1 )
 motion_mirroring = Vector2( 1024, 20000 )
 
-[node name="CometSpawner" parent="Background/Comets" instance=ExtResource( 20 )]
-position = Vector2( -4, -434 )
-frequency = 10
-resourcePath = "res://Scenes/Particles/Space/Comet.tscn"
+[node name="Asteroids" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.3, 1 )
+
+[node name="AsteroidSpawner2" parent="Background/Asteroids" instance=ExtResource( 20 )]
+position = Vector2( -775, -1 )
+frequency = 8
+front = false
+
+[node name="AsteroidSpawner4" parent="Background/Asteroids" instance=ExtResource( 20 )]
+position = Vector2( 830, 1 )
+frequency = 8
+start_delay = 3
+front = false
+direction_degrees = 180
+
+[node name="AsteroidSpawner6" parent="Background/Asteroids" instance=ExtResource( 20 )]
+position = Vector2( 0, -440 )
+frequency = 8
+start_delay = 5
+front = false
+direction_degrees = 270
+
+[node name="AsteroidSpawner8" parent="Background/Asteroids" instance=ExtResource( 20 )]
+position = Vector2( 3, 437 )
+frequency = 8
+start_delay = 7
+front = false
+direction_degrees = 90
 
 [node name="Foreground" type="ParallaxBackground" parent="."]
-layer = 1
+layer = 10
 
-[node name="Meteors" type="ParallaxLayer" parent="Foreground"]
-motion_scale = Vector2( 1.2, 1 )
-motion_mirroring = Vector2( 1024, 0 )
+[node name="Asteroids" type="ParallaxLayer" parent="Foreground"]
+motion_scale = Vector2( 1.3, 1 )
 
-[node name="AsteroidSpawner" parent="Foreground/Meteors" instance=ExtResource( 20 )]
+[node name="AsteroidSpawner" parent="Foreground/Asteroids" instance=ExtResource( 20 )]
+position = Vector2( -775, -1 )
+frequency = 8
+
+[node name="AsteroidSpawner3" parent="Foreground/Asteroids" instance=ExtResource( 20 )]
+position = Vector2( 830, 1 )
+frequency = 8
+start_delay = 3
+direction_degrees = 180
+
+[node name="AsteroidSpawner5" parent="Foreground/Asteroids" instance=ExtResource( 20 )]
+position = Vector2( 0, -440 )
+frequency = 8
+start_delay = 5
+direction_degrees = 270
+
+[node name="AsteroidSpawner7" parent="Foreground/Asteroids" instance=ExtResource( 20 )]
+position = Vector2( 3, 437 )
+frequency = 8
+start_delay = 7
+direction_degrees = 90

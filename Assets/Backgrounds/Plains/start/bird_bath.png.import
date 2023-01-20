@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bird_fountain.png-e88c62856d3e18bcb4c966add1ff4109.stex"
+path="res://.import/bird_bath.png-67b3f88a061556afda87bc062e564ae2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Backgrounds/Plains/start/bird_fountain.png"
-dest_files=[ "res://.import/bird_fountain.png-e88c62856d3e18bcb4c966add1ff4109.stex" ]
+source_file="res://Assets/Backgrounds/Plains/start/bird_bath.png"
+dest_files=[ "res://.import/bird_bath.png-67b3f88a061556afda87bc062e564ae2.stex" ]
 
 [params]
 

@@ -3,6 +3,8 @@ extends Character
 export var FLAP := 150
 
 const windResource = preload("res://Scenes/Particles/WindCPU.tscn")
+const splashResourceBig = preload("res://Scenes/Particles/SplashCPU2.tscn")
+const splashResourceSmall = preload("res://Scenes/Particles/SplashCPU3.tscn")
 
 var flap = false
 
@@ -28,7 +30,6 @@ func _physics_process(delta):
 		if motion.y > MAX_FALL_SPEED:
 			motion.y = MAX_FALL_SPEED
 		motion = move_and_slide(motion, UP)
-
 
 func flap():
 	if not alive or not started:
@@ -59,3 +60,13 @@ func _on_point():
 	GRAVITY *= 1.00
 	FLAP *= 1.00
 	MAX_FALL_SPEED *= 1.00
+
+
+func splash(big : bool):
+	var s
+	if big:
+		s = splashResourceBig.instance()
+	else:
+		s = splashResourceSmall.instance()
+	get_parent().add_child(s)
+	s.global_position = global_position + Vector2(0, 32)

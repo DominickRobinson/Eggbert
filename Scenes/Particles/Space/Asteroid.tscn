@@ -1,32 +1,33 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Particles/Space/TrailScenes/spotlight_2.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Particles/Space/TrailScenes/Smoketrail_Static.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Particles/Space/TrailScripts/firedeco.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Particles/Space/Asteroid.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Backgrounds/Space/asteroid.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Particles/Space/Glow.gd" type="Script" id=5]
 
-[sub_resource type="Curve" id=16]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.656618, 0.680505 ), -1.05209, -1.05209, 0, 0, Vector2( 0.747794, 0.355596 ), 0.0, 0.0, 0, 0, Vector2( 0.818382, 0.442238 ), 0.0, 0.0, 0, 0, Vector2( 0.903677, 0.232852 ), 0.0, 0.0, 0, 0, Vector2( 0.956618, 0.348375 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.15343 ), -1.62235, 0.0, 0, 0 ]
-
-[sub_resource type="Gradient" id=17]
-offsets = PoolRealArray( 0, 0.0130208, 0.617188, 1 )
-colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 0, 1, 0.913725, 0, 0.305882, 1, 0, 0, 0.552941 )
-
-[sub_resource type="CanvasItemMaterial" id=18]
+[sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
 
 [node name="Asteroid" type="Node2D"]
-scale = Vector2( 2, 2 )
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 
-[node name="Smoketrail" parent="." instance=ExtResource( 2 )]
-width = 150.0
-width_curve = SubResource( 16 )
-gravity = Vector2( 0, 0 )
-wind = Vector2( 0, 0 )
-gradient_col = SubResource( 17 )
-max_points = 40
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 4 )
 
-[node name="Fire" type="Sprite" parent="."]
-modulate = Color( 1, 0.329412, 0, 0.823529 )
-material = SubResource( 18 )
+[node name="Glow" type="Sprite" parent="Sprite"]
+visible = false
+show_behind_parent = true
+material = SubResource( 1 )
+scale = Vector2( 0.5, 1 )
 texture = ExtResource( 1 )
+script = ExtResource( 5 )
+
+[node name="Glow2" type="Sprite" parent="Sprite/Glow"]
+modulate = Color( 4, 1.82617, 1, 1 )
+show_behind_parent = true
+material = SubResource( 1 )
+rotation = 1.49231
+scale = Vector2( 0.501156, 1.99884 )
+texture = ExtResource( 1 )
+script = ExtResource( 5 )

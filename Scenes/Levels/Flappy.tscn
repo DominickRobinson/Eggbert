@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/Particles/SweatCPU.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Levels/Level.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Backgrounds/Plains/start/bird_house.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Backgrounds/Plains/start/bird_fountain.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Backgrounds/Plains/start/bird_bath.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Characters/Eggbert/eye-r.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Characters/Eggbert/head.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Characters/Eggbert/foot-r.png" type="Texture" id=13]
@@ -2701,7 +2701,7 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=28]
 resource_name = "cutscene_flappy"
 length = 3.25
-step = 0.125
+step = 0.063
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
@@ -2733,11 +2733,26 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 2.268, 2.457, 2.458, 2.646, 2.835 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [ "it's eggin' time", 1.5, "normal" ],
 "method": "speak"
+}, {
+"args": [ true ],
+"method": "splash"
+}, {
+"args": [ Vector2( 0, 0 ) ],
+"method": "splash"
+}, {
+"args": [ false ],
+"method": "splash"
+}, {
+"args": [ false ],
+"method": "splash"
+}, {
+"args": [ false ],
+"method": "splash"
 } ]
 }
 tracks/3/type = "animation"
@@ -3019,11 +3034,12 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 9 )
 
 [node name="Bath" type="Sprite" parent="Start"]
-position = Vector2( -138, 116 )
+position = Vector2( -135, 121 )
+scale = Vector2( 1.4, 1.4 )
 texture = ExtResource( 10 )
 
 [node name="Eggbert" type="KinematicBody2D" parent="." groups=["Players"]]
-position = Vector2( -39, -121 )
+position = Vector2( -79, 12 )
 rotation = 12.5664
 z_index = 2
 script = ExtResource( 6 )

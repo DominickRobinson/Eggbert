@@ -3,12 +3,10 @@
 [ext_resource path="res://Scenes/Particles/ElectricTrail.gd" type="Script" id=1]
 
 [sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0, 0.309783, 0.627717, 1 )
-colors = PoolColorArray( 1, 0.968627, 0.996078, 0.101961, 1, 0.893856, 0.0295359, 1, 1, 0.632417, 0.202532, 1, 1, 0, 0, 1 )
+offsets = PoolRealArray( 0.00815217, 0.0597826, 0.309783, 0.641304, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 1, 0.968627, 0.996078, 0.101961, 1, 0.893856, 0.0295359, 1, 1, 0.632417, 0.202532, 1, 0.476563, 1, 0, 1 )
 
 [node name="ElectricTrail" type="Line2D"]
 show_behind_parent = true
-width = 25.0
 gradient = SubResource( 1 )
 script = ExtResource( 1 )
-length = 75
