@@ -41,7 +41,7 @@ func generate():
 	if front:
 		pass
 	else:
-		a.modulate = Color(.2,.2,.2)
+		a.modulate = Color(.4,.4,.4)
 		a.scale *= .3
 		a.speed *= .3
 	
@@ -50,11 +50,11 @@ func generate():
 
 func start_timer():
 	rng.randomize()
-	frequency = rng.randi_range(2, 36)
+	frequency = rng.randi_range(2, 20)
 	$Timer.wait_time = frequency
 	$Timer.start()
 
 
 func on_point():
-	print("increase asteroid speed")
+#	print("increase asteroid speed")
 	pass

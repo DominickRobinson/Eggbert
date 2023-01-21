@@ -34,7 +34,7 @@ func play_track(track_name = "", vol = -10.0):
 	music_player.stream = load(filepath)
 #	music_player.volume_db = vol
 	
-	fade_in(vol, 5)
+	fade_in(vol, 3)
 	music_player.play()
 	
 	return music_player

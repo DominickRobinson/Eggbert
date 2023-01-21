@@ -49,7 +49,9 @@ func lose():
 func reload():
 	score = 0
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+#	get_tree().reload_current_scene()
+	SceneTransition.reload_scene()
+
 
 func play_audio(filepath = "", vol = 0):
 	var a = AudioStreamPlayer.new()
@@ -61,10 +63,10 @@ func play_audio(filepath = "", vol = 0):
 
 
 func change_scene(scene_path):
-	get_tree().change_scene(scene_path)
+	SceneTransition.change_scene(scene_path)
 
 func main_menu():
-	get_tree().change_scene("res://Scenes/Levels/MainMenu.tscn")
+	SceneTransition.change_scene("res://Scenes/Levels/MainMenu.tscn")
 
 func quit():
 	get_tree().quit()

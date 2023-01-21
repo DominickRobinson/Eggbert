@@ -30,6 +30,7 @@ GameManager="*res://Autoloads/GameManager.gd"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 Global="*res://Autoloads/Global.gd"
 MusicManager="*res://Autoloads/MusicManager.tscn"
+SceneTransition="*res://Autoloads/SceneTransition.tscn"
 
 [display]
 

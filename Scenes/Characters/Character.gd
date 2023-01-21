@@ -49,10 +49,10 @@ func play_cutscene():
 	cutscene_anim.play_cutscene(cutscene)
 
 func _physics_process(delta):
-	if not started and (Input.is_action_just_pressed("flap") or Input.is_action_just_pressed("left_mouseclick")):
-		flaps += 1
-		if flaps > 1:
-			$Cutscene.playback_speed = 5
+#	if not started and (Input.is_action_just_pressed("flap") or Input.is_action_just_pressed("left_mouseclick")):
+#		flaps += 1
+#		if flaps > 1:
+#			$Cutscene.playback_speed = 5
 	if not alive:
 		motion.x = lerp(motion.x, 0, .02)
 		motion.y += GRAVITY

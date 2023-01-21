@@ -1,6 +1,6 @@
 extends Character
 
-export var SWIM_SPEED := 50
+export var SWIM_SPEED := 500
 
 var float_playback_speed
 var click_position = global_position
@@ -22,7 +22,7 @@ func _physics_process(delta):
 		return
 	swim = $Touch/Button.pressed
 	if alive:
-		swim()
+		swim(delta)
 		motion.x = HORIZONTAL_SPEED
 		motion = move_and_slide(motion, UP)
 	
@@ -37,10 +37,10 @@ func splash():
 	s.global_position = global_position
 	s.global_position.y -= 20
 
-func swim():
+func swim(delta):
 	if swim:
 		click_position = get_global_mouse_position()
-		motion.y = (click_position.y - global_position.y) * SWIM_SPEED
+		motion.y = (click_position.y - global_position.y) * SWIM_SPEED * delta
 		rotation = motion.angle() + PI/2
 		yield(self,"ready")
 		anim.playback_speed = float_playback_speed*2

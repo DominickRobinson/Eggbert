@@ -16,9 +16,10 @@ blend_mode = 1
 
 [node name="Comet" type="Node2D"]
 script = ExtResource( 3 )
+despawn = false
 
 [node name="Smoketrail" parent="." instance=ExtResource( 2 )]
-width = 150.0
+position = Vector2( -64, 62 )
 width_curve = SubResource( 18 )
 gravity = Vector2( 0, 0 )
 wind = Vector2( 0, 0 )
@@ -26,6 +27,7 @@ gradient_col = SubResource( 17 )
 max_points = 40
 
 [node name="Fire" type="Sprite" parent="."]
+visible = false
 modulate = Color( 0.2, 0.764706, 0.752941, 1 )
 material = SubResource( 15 )
 texture = ExtResource( 1 )
