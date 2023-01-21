@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Autoloads/SceneTransition.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Shaders/Transitions/wave_transition.tres" type="Shader" id=2]
@@ -18,7 +18,7 @@ shader_param/foam_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = ExtResource( 3 )
-shader_param/circle_size = 0.368534
+shader_param/circle_size = 0.0
 shader_param/screen_width = 1024.0
 shader_param/screen_height = 600.0
 
@@ -27,20 +27,20 @@ shader = ExtResource( 5 )
 shader_param/in_color = Color( 0.886275, 1, 0.980392, 1 )
 shader_param/out_color = Color( 1, 1, 1, 0 )
 shader_param/in_out = 0.0
-shader_param/position = -1.17991
+shader_param/position = -1.5
 shader_param/size = Vector2( 128, 128 )
 
 [sub_resource type="ShaderMaterial" id=9]
 shader = ExtResource( 6 )
 shader_param/num_lines = 20.0
-shader_param/y_threshold = 0.92238
+shader_param/y_threshold = 1.0
 shader_param/line_color_a = Color( 0, 0.811765, 1, 1 )
 shader_param/line_color_b = Color( 0.329412, 0.8, 0.133333, 1 )
 
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("DissolveRect:color")
+tracks/0/path = NodePath("Title:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -52,7 +52,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("DissolveRect:visible")
+tracks/1/path = NodePath("Title:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -124,7 +124,7 @@ tracks/6/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("DissolveRect/EggbertSprite:modulate")
+tracks/7/path = NodePath("Title/EggbertSprite:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -159,12 +159,36 @@ tracks/9/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("DissolveRect:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("DissolveRect:color")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=11]
 resource_name = "dissolve"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("DissolveRect:color")
+tracks/0/path = NodePath("DissolveRect:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -172,11 +196,11 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
+"update": 1,
+"values": [ true, true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("DissolveRect:visible")
+tracks/1/path = NodePath("DissolveRect:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -184,24 +208,13 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("DissolveRect/EggbertSprite:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=10]
 resource_name = "flap"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("FlappyRect:visible")
 tracks/0/interp = 1
@@ -209,7 +222,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, true ]
@@ -222,7 +235,7 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.3, 0.464475, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 1 )
+"times": PoolRealArray( 0, 0.5 )
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("FlappyRect/EggbertSprite:modulate")
@@ -231,7 +244,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -239,6 +252,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=7]
 resource_name = "glide"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("GlideRect:visible")
 tracks/0/interp = 1
@@ -246,7 +260,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, true ]
@@ -258,7 +272,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -271,11 +285,13 @@ tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
 "points": PoolRealArray( 1, -0.25, 0, 0.25, 0, -1.5, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 1 )
+"times": PoolRealArray( 0, 0.5 )
 }
 
 [sub_resource type="Animation" id=5]
 resource_name = "space"
+length = 0.5
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("SpaceRect:visible")
 tracks/0/interp = 1
@@ -283,7 +299,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, true ]
@@ -296,7 +312,7 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "points": PoolRealArray( 1.00829, -0.25, 0, 0.25, 0, 0.565955, -0.25201, -0.564505, 0.24799, 0.505527, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.55201, 1 )
+"times": PoolRealArray( 0, 0.25, 0.5 )
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("SpaceRect/EggbertSprite:modulate")
@@ -305,7 +321,47 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "title"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Title:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Title:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Title/EggbertSprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -313,6 +369,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "wave"
+length = 0.5
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("WaveRect:visible")
@@ -321,7 +378,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, true ]
@@ -333,8 +390,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 1, -0.15, 0.0588436, 0.2, -1.2294, 0.645997, -0.25, 0.311741, 0.2, -0.193785, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.45, 1 )
+"points": PoolRealArray( 1, -0.15, 0.0588436, 0.1, -0.0163511, 0.492165, -0.1, -0.236966, 0.1, 0.269146, 0, -0.1, -0.00224525, 0.1, -0.00224525 ),
+"times": PoolRealArray( 0, 0.25, 0.5 )
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("WaveRect/EggbertSprite:modulate")
@@ -343,7 +400,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -362,7 +419,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EggbertSprite" parent="DissolveRect" instance=ExtResource( 4 )]
+[node name="Title" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_clip_content = true
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EggbertSprite" parent="Title" instance=ExtResource( 4 )]
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="WaveRect" type="ColorRect" parent="."]
@@ -370,6 +437,7 @@ visible = false
 material = SubResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_clip_content = true
 color = Color( 0, 0.623529, 1, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -385,12 +453,12 @@ self_modulate = Color( 0, 0, 0, 1 )
 material = SubResource( 6 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_clip_content = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="EggbertSprite" parent="SpaceRect" instance=ExtResource( 4 )]
-modulate = Color( 1, 1, 1, 0.8 )
 animation = "glide"
 
 [node name="GlideRect" type="ColorRect" parent="."]
@@ -398,6 +466,7 @@ visible = false
 material = SubResource( 8 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_clip_content = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -410,18 +479,21 @@ visible = false
 material = SubResource( 9 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_clip_content = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="EggbertSprite" parent="FlappyRect" instance=ExtResource( 4 )]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 animation = "run"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
-anims/dissolve = SubResource( 2 )
+anims/dissolve = SubResource( 11 )
 anims/flap = SubResource( 10 )
 anims/glide = SubResource( 7 )
 anims/space = SubResource( 5 )
+anims/title = SubResource( 2 )
 anims/wave = SubResource( 4 )

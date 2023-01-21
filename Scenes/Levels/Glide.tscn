@@ -2788,7 +2788,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 2.013 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
-"args": [ "let's get this bread!", 2.0, "normal" ],
+"args": [ "it's fly or die...", 2.0, "normal" ],
 "method": "speak"
 }, {
 "args": [  ],
@@ -3053,7 +3053,7 @@ position = Vector2( 2000, -80 )
 color = "ice_blue"
 
 [node name="Eggbert" type="KinematicBody2D" parent="." groups=["Players"]]
-position = Vector2( 122.466, 169.665 )
+position = Vector2( -279.8, 4.6 )
 z_index = 2
 script = ExtResource( 7 )
 cutscene = "glide"

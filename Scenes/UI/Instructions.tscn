@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Fonts/coolvetica.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Fonts/LEMONMILK.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Themes/Buttons.tres" type="Theme" id=3]
 [ext_resource path="res://Scenes/UI/Instructions.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Themes/FontVerySmall.tres" type="DynamicFont" id=5]
 
 [sub_resource type="DynamicFont" id=4]
 size = 72
@@ -51,7 +52,6 @@ tracks/0/keys = {
 
 [node name="Instructions" type="Control"]
 pause_mode = 2
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
@@ -155,6 +155,17 @@ margin_right = 400.0
 margin_bottom = 300.0
 custom_fonts/font = SubResource( 8 )
 text = "CLICK ANYWHERE TO START"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="DoubleTap" type="Label" parent="Background/CenterContainer/VBoxContainer"]
+visible = false
+margin_top = 310.0
+margin_right = 400.0
+margin_bottom = 332.0
+custom_fonts/font = ExtResource( 5 )
+text = "or double-tap to skip the animation"
 align = 1
 valign = 1
 autowrap = true

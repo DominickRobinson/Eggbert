@@ -2820,7 +2820,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "clips": PoolStringArray( "wave", "jump", "swim" ),
-"times": PoolRealArray( 0, 1.5, 3.25 )
+"times": PoolRealArray( 0, 1.25, 3.25 )
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:position")
@@ -2829,7 +2829,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.625, 2.25, 2.875, 3.375, 3.5 ),
+"times": PoolRealArray( 0, 1.375, 2, 2.875, 3.375, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -269, -456 ), Vector2( -269, -456 ), Vector2( -64, -630 ), Vector2( -64, -630 ), Vector2( -12, -20 ), Vector2( -12, -20 ) ]
@@ -2841,7 +2841,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.00466507, 1.75, 2.375, 3.5 ),
+"times": PoolRealArray( 0.00466507, 1.5, 2.125, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, -720.0, -720.0 ]
@@ -2865,10 +2865,13 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0.00466507, 3.125 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.25, 3.125 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
-"args": [ "swiggity swoogity", 1.5, "normal" ],
+"args": [ "it sure is hot out...", 1.5, "normal" ],
+"method": "speak"
+}, {
+"args": [ "CANNONBALL!!", 1.2, "yell" ],
 "method": "speak"
 }, {
 "args": [  ],
@@ -2967,8 +2970,7 @@ mode = "SWIM"
 instructions = "Tap or click and hold to where you want to SWIM up or down to!"
 
 [node name="Eggbert" type="KinematicBody2D" parent="." groups=["Players"]]
-position = Vector2( -51, -477.5 )
-rotation = -12.5664
+position = Vector2( 122.466, 169.665 )
 z_index = 2
 script = ExtResource( 7 )
 cutscene = "swim"

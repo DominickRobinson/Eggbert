@@ -12,7 +12,7 @@ func change_scene(target : String, reloading = false):
 	match target:
 		"res://Scenes/Levels/MainMenu.tscn":
 			print("... to main menu")
-			tran = "dissolve"
+			tran = "title"
 		"res://Scenes/Levels/Flappy.tscn":
 			print("... to flappy")
 			tran = "flap"
@@ -25,12 +25,15 @@ func change_scene(target : String, reloading = false):
 			$SpaceRect/EggbertSprite/AnimationPlayer.play("death")
 	
 	if reloading:
-		anim.playback_speed = 1.5
+		anim.playback_speed = 3
+		tran = "dissolve"
 	else:
-		anim.playback_speed = 1
+		anim.playback_speed = .5
 	
 	anim.play(tran)
 	yield(anim, "animation_finished")
+	if not reloading:
+		yield(get_tree().create_timer(.1), "timeout")
 
 	get_tree().change_scene(target)
 	anim.play_backwards(tran)

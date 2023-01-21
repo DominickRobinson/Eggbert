@@ -2,6 +2,7 @@ extends Character
 
 export var SWIM_SPEED := 500
 
+
 var float_playback_speed
 var click_position = global_position
 
