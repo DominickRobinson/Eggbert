@@ -47,7 +47,7 @@ func add_trail():
 	trail.despawn = false
 
 func die(time=4.5):
-	$Sizzling.queue_free()
+	$Sizzling.stop()
 	trail.queue_free()
 	speak("Uh oh . . .", 2, "yell")
 	.die(time)

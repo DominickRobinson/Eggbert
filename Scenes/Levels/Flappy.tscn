@@ -3039,7 +3039,7 @@ scale = Vector2( 1.4, 1.4 )
 texture = ExtResource( 10 )
 
 [node name="Eggbert" type="KinematicBody2D" parent="." groups=["Players"]]
-position = Vector2( 122.466, 169.665 )
+position = Vector2( -382, -70 )
 z_index = 2
 script = ExtResource( 6 )
 cutscene = "flappy"

@@ -25,4 +25,4 @@ scale_amount_random = 0.28
 scale_amount_curve = SubResource( 1 )
 color_ramp = SubResource( 2 )
 script = ExtResource( 1 )
-vol = -17
+vol = -25
