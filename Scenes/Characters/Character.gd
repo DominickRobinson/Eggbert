@@ -31,6 +31,8 @@ var started = false
 
 var flaps = 0
 
+signal die
+
 func _init():
 	GameManager.score = 0
 	GameManager.connect("point", self, "_on_point")
@@ -57,6 +59,7 @@ func _physics_process(delta):
 		motion = move_and_slide(motion, UP)
 
 func die(time=time_to_die):
+	emit_signal("die")
 	alive = false
 	anim.stop()
 	anim.play("death")

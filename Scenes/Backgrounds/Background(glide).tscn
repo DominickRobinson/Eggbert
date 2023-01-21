@@ -226,7 +226,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 30, 37.5, 45, 52.5, 70 ),
+"times": PoolRealArray( 0, 20, 30, 47.5, 57.5, 70 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -400, -234 ), Vector2( -400, -234 ), Vector2( -392, 324 ), Vector2( -392, 324 ), Vector2( -400, -234 ), Vector2( -400, -234 ) ]
@@ -238,7 +238,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 30, 37.5, 45, 52.5, 70 ),
+"times": PoolRealArray( 0, 20, 30, 47.5, 57.5, 70 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -432, 433 ), Vector2( -432, 433 ), Vector2( -403, -217 ), Vector2( -403, -217 ), Vector2( -432, 433 ), Vector2( -432, 433 ) ]
@@ -250,7 +250,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 27.5, 37.5, 45, 55, 70 ),
+"times": PoolRealArray( 0, 20, 27.5, 50, 57.5, 70 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.443137, 0.568627, 1, 1 ), Color( 0.443137, 0.568627, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
@@ -320,6 +320,7 @@ motion_scale = Vector2( 0.4, 1 )
 motion_mirroring = Vector2( 1100, 0 )
 
 [node name="Sprite" type="Sprite" parent="Background/Mountains"]
+position = Vector2( 0, 19 )
 texture = ExtResource( 7 )
 
 [node name="Foreground" type="ParallaxBackground" parent="."]

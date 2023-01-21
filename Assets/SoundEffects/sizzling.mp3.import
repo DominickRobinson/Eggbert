@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sizzling.mp3-e9b42816d0cd15991170893d450efe4d.mp3str"
+
+[deps]
+
+source_file="res://Assets/SoundEffects/sizzling.mp3"
+dest_files=[ "res://.import/sizzling.mp3-e9b42816d0cd15991170893d450efe4d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -2,8 +2,8 @@ extends Sprite
 
 var floating = false
 
-var GRAVITY = -2
-var motion = Vector2(-100, 150)
+var GRAVITY = -1.5
+var motion = Vector2(-100, 100)
 
 onready var anim = $AnimationPlayer
 

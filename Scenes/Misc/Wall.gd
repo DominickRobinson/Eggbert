@@ -7,6 +7,7 @@ var filepath = "res://Assets/Props/Pipes/pipe-%s.png"
 onready var us = $Upper/Sprite
 onready var ls = $Lower/Sprite
 
+signal point
 
 func _ready():
 	change_color(color)

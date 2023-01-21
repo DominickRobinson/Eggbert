@@ -2974,6 +2974,7 @@ instructions = "Tap, click, or press space and hold to GLIDE upwards!"
 
 [node name="GameCamera(glide)" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 0.95, 0.95 )
 script = ExtResource( 1 )
 player_node_path = NodePath("../Eggbert")
 wall_spawn_range = [ -200, 200 ]
@@ -3052,8 +3053,7 @@ position = Vector2( 2000, -80 )
 color = "ice_blue"
 
 [node name="Eggbert" type="KinematicBody2D" parent="." groups=["Players"]]
-position = Vector2( -123.909, -170.818 )
-rotation = -6.28319
+position = Vector2( 122.466, 169.665 )
 z_index = 2
 script = ExtResource( 7 )
 cutscene = "glide"

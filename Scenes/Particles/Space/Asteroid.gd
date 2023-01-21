@@ -4,7 +4,7 @@ export var speed := 500
 export var direction_degrees := 90
 export var angular_velocity := 50
 
-export var despawn := true
+export var despawn := false
 
 export var parallax_factor := 1
 

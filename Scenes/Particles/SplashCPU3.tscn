@@ -9,7 +9,7 @@ _data = [ Vector2( 0.00961538, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.265766 ), 0.0,
 offsets = PoolRealArray( 0, 0.326087, 1 )
 colors = PoolColorArray( 0.413502, 0.628857, 1, 1, 0.56172, 0.722651, 1, 0.747283, 1, 1, 1, 0 )
 
-[node name="Splash2" type="CPUParticles2D"]
+[node name="Splash3" type="CPUParticles2D"]
 emitting = false
 one_shot = true
 explosiveness = 0.98
@@ -24,3 +24,4 @@ scale_amount_random = 0.28
 scale_amount_curve = SubResource( 1 )
 color_ramp = SubResource( 2 )
 script = ExtResource( 1 )
+vol = -20

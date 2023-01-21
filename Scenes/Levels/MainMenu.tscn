@@ -40,6 +40,7 @@ layer = -1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 0.95, 0.95 )
 
 [node name="Eggbert" parent="." instance=ExtResource( 3 )]
 position = Vector2( 122.466, 169.665 )

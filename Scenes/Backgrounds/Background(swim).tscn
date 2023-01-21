@@ -266,12 +266,12 @@ frame = 2
 [node name="Island" type="ParallaxLayer" parent="Above"]
 
 [node name="Sand" type="Sprite" parent="Above/Island"]
-position = Vector2( -289, 458 )
+position = Vector2( -246, 464 )
 texture = ExtResource( 3 )
 
 [node name="Tree" type="Sprite" parent="Above/Island"]
 material = SubResource( 10 )
-position = Vector2( -458, -28 )
+position = Vector2( -415.5, -20.5 )
 texture = ExtResource( 29 )
 
 [node name="Background" type="ParallaxBackground" parent="."]
@@ -287,6 +287,7 @@ scale = Vector2( 0.275553, 1403.09 )
 texture = SubResource( 6 )
 
 [node name="Waves" type="ParallaxLayer" parent="Background"]
+motion_offset = Vector2( 0, 30 )
 motion_mirroring = Vector2( 1200, 0 )
 script = ExtResource( 27 )
 CLOUD_SPEED = -20

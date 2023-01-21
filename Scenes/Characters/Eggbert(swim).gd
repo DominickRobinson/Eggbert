@@ -1,6 +1,6 @@
 extends Character
 
-export var SWIM_SPEED := 5
+export var SWIM_SPEED := 50
 
 var float_playback_speed
 var click_position = global_position
@@ -11,6 +11,7 @@ var maskResource = preload("res://Scenes/Props/Mask.tscn")
 onready var mask
 
 const splashResource = preload("res://Scenes/Particles/SplashCPU.tscn")
+
 
 func _ready():
 	scuba_mask()
