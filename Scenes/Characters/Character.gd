@@ -55,7 +55,8 @@ func skip_cutscene():
 
 func _physics_process(delta):
 	if not started and (Input.is_action_just_pressed("flap") or Input.is_action_just_pressed("left_mouseclick")):
-		skip_cutscene()
+#		skip_cutscene()
+		pass
 	if not alive:
 		motion.x = lerp(motion.x, 0, .02)
 		motion.y += GRAVITY

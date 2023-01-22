@@ -2980,7 +2980,8 @@ zoom = Vector2( 0.95, 0.95 )
 player_node_path = NodePath("../Eggbert")
 
 [node name="CometSpawner" parent="GameCamera(glide)" instance=ExtResource( 21 )]
-position = Vector2( 477, -593 )
+position = Vector2( 713, -568 )
+frequency = 8
 
 [node name="Eggbert" type="KinematicBody2D" parent="." groups=["Players"]]
 position = Vector2( -121, -167 )

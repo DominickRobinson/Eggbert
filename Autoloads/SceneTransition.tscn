@@ -485,7 +485,6 @@ __meta__ = {
 }
 
 [node name="EggbertSprite" parent="FlappyRect" instance=ExtResource( 4 )]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
 animation = "run"
 

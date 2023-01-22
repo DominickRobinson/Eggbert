@@ -5,7 +5,7 @@ onready var fire = $Fire
 
 var time := 0.0
 
-export var speed := 500
+export var speed := 300
 export var direction_degrees := 90
 var direction = deg2rad(direction_degrees)
 
