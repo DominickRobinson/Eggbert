@@ -36,11 +36,7 @@ func _ready():
 		player.connect("die", self, "add_trauma", [1])
 
 
-func _physics_process(delta):
-	if Input.is_action_just_pressed("a"):
-#		add_trauma(1)
-		zoom *= 1.1
-	
+func _physics_process(delta):	
 	if trauma:
 		trauma = max(trauma - decay * delta, 0)
 		shake()

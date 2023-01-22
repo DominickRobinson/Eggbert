@@ -2970,7 +2970,8 @@ track = "glide"
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
 mode = "GLIDE"
-instructions = "Tap, click, or press space and hold to GLIDE upwards!"
+instructions = "Tap, click, or press space and hold to GLIDE upwards!
+This mode gets faster the farther you go!"
 
 [node name="GameCamera(glide)" type="Camera2D" parent="."]
 current = true

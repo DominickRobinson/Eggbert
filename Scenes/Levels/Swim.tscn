@@ -2967,7 +2967,8 @@ track = "swim"
 
 [node name="GUI" parent="." instance=ExtResource( 4 )]
 mode = "SWIM"
-instructions = "Tap or click and hold to where you want to SWIM up or down to!"
+instructions = "Tap or click and hold to where you want to SWIM up or down to!
+This mode gets faster the farther you go!"
 
 [node name="Eggbert" type="KinematicBody2D" parent="." groups=["Players"]]
 position = Vector2( 122.466, 169.665 )

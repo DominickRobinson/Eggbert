@@ -2973,7 +2973,8 @@ track = "anti-gravity"
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
 mode = "ANTI-GRAVITY"
-instructions = "Tap, click, or press space to REVERSE GRAVITY!"
+instructions = "Tap, click, or press space to REVERSE GRAVITY!
+This mode gets faster the farther you go!"
 
 [node name="GameCamera(glide)" parent="." instance=ExtResource( 3 )]
 zoom = Vector2( 0.95, 0.95 )
