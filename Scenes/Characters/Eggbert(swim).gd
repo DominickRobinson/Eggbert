@@ -25,6 +25,7 @@ func _physics_process(delta):
 	if alive:
 		swim(delta)
 		motion.x = HORIZONTAL_SPEED
+#		motion.y += -30
 		motion = move_and_slide(motion, UP)
 	
 func scuba_mask():
