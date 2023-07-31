@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Scenes/Levels/Cutscene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Assets/Characters/Eggbert/wing-r.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Characters/Eggbert/wing-l.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Characters/Eggbert/tail.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Characters/Hats/top-hat.png" type="Texture" id=21]
 
 [sub_resource type="CircleShape2D" id=7]
 radius = 19.2354
@@ -3075,6 +3076,10 @@ position = Vector2( 50, -240 )
 texture = ExtResource( 11 )
 offset = Vector2( -50, 440 )
 hframes = 4
+
+[node name="Hat" type="Sprite" parent="Eggbert/Body/Head"]
+position = Vector2( 0, 200 )
+texture = ExtResource( 21 )
 
 [node name="Tail" type="Sprite" parent="Eggbert/Body"]
 show_behind_parent = true

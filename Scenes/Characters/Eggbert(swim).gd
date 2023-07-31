@@ -26,6 +26,7 @@ func _physics_process(delta):
 		swim(delta)
 		motion.x = HORIZONTAL_SPEED
 #		motion.y += -30
+#		motion.x += (click_position.x - global_position.x) * SWIM_SPEED * delta
 		motion = move_and_slide(motion, UP)
 	
 func scuba_mask():

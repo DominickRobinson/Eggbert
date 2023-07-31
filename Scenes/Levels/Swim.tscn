@@ -3149,7 +3149,6 @@ smoothing_enabled = true
 script = ExtResource( 1 )
 player_node_path = NodePath("../Eggbert")
 wall_spawn_range = [ -180, 80 ]
-following_x = false
 following_y = true
 
 [node name="Reset" type="Area2D" parent="GameCamera"]
